@@ -10,10 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+require('rxjs/add/operator/toPromise');
 var AuthenticationService = (function () {
     function AuthenticationService(http) {
         this.http = http;
-        this.authenticationUrl = 'apps';
+        this.authenticationUrl = 'http://localhost:9000/apps';
     }
     AuthenticationService.prototype.login = function (user) {
         return this.post(user);
@@ -23,7 +24,7 @@ var AuthenticationService = (function () {
         return this.http
             .post(this.authenticationUrl, JSON.stringify(user), { headers: headers })
             .toPromise()
-            .then(function (res) { return res.json().data; })
+            .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
     AuthenticationService.prototype.handleError = function (error) {

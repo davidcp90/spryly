@@ -9,6 +9,7 @@ import { AuthenticationService } from './authentication.service';
     providers: [AuthenticationService]
 })
 export class UserLoginComponent implements OnInit {
+    error: string;
     token: string = ''
     user: User = {
         username: '',
@@ -20,6 +21,8 @@ export class UserLoginComponent implements OnInit {
     ngOnInit() {}
 
     login() {
-        this.authenticationService.login(this.user).then(token => this.token = token);
+        this.authenticationService.login(this.user)
+            .then(token => this.token = token)
+            .catch(error => this.error = error);
     }
 }

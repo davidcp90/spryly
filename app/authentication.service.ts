@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
+import 'rxjs/add/operator/toPromise';
+
 import { User } from './user';
 
 @Injectable()
 export class AuthenticationService {
-    private authenticationUrl = 'apps';
+    private authenticationUrl = 'http://localhost:9000/apps';
 
     constructor(private http: Http) { }
 
@@ -19,7 +21,7 @@ export class AuthenticationService {
         return this.http
             .post(this.authenticationUrl, JSON.stringify(user), {headers: headers})
             .toPromise()
-            .then(res => res.json().data)
+            .then(response => response.json().data)
             .catch(this.handleError);
     }
 

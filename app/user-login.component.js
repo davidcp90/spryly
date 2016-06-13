@@ -22,7 +22,9 @@ var UserLoginComponent = (function () {
     UserLoginComponent.prototype.ngOnInit = function () { };
     UserLoginComponent.prototype.login = function () {
         var _this = this;
-        this.authenticationService.login(this.user).then(function (token) { return _this.token = token; });
+        this.authenticationService.login(this.user)
+            .then(function (token) { return _this.token = token; })
+            .catch(function (error) { return _this.error = error; });
     };
     UserLoginComponent = __decorate([
         core_1.Component({
