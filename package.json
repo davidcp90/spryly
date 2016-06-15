@@ -38,10 +38,12 @@
     "gulp-concat": "^2.6.0",
     "gulp-rev": "^7.1.0",
     "gulp-sass": "^2.3.2",
+    "gulp-tslint": "^5.0.0",
     "gulp-typescript": "^2.13.6",
     "gulp-usemin": "^0.3.23",
     "lite-server": "^2.2.0",
     "merge-stream": "^1.0.0",
+    "tslint": "^3.11.0",
     "typescript": "^1.8.10",
     "typings": "^1.0.4"
   }
