@@ -1,1 +1,0 @@
-{"version":3,"sources":["main.ts"],"names":[],"mappings":";AAAA,yCAA6B,mCAAmC,CAAC,CAAA;AAEjE,iCAA+B,2BAA2B,CAAC,CAAA;AAE3D,oCAAS,CAAC,iCAAc,CAAC,CAAC","file":"main.js","sourcesContent":["import { bootstrap }    from '@angular/platform-browser-dynamic';\n\nimport { MyAppComponent } from './my-app/my-app.component';\n\nbootstrap(MyAppComponent);\n\n\n"],"sourceRoot":"/source/"}
