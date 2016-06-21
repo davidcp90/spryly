@@ -5,12 +5,11 @@ import { ELEMENT_PROBE_PROVIDERS } from '@angular/platform-browser';
 import { ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HTTP_PROVIDERS } from '@angular/http';
-import './style/app.sass';
 import {AppComponent} from './app/app.component';
 
 
 const ENV_PROVIDERS = [];
-// depending on the env mode, enable prod mode , different endpoints or add debugging modules
+// depending on the env mode, enable prod mode or add debugging modules
 if (process.env.ENV === 'build') {
   enableProdMode();
 } else {

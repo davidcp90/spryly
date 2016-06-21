@@ -4,6 +4,7 @@
 * [About spryly](#about-spryly)
 * [Quick install](#quick-install)
 * [Project structure](#project-structure)
+* [UI Components](#ui-components)
 * [Routines](#routines)
     * [Running the app](#running-the-app)
     * [Developing](#developing)
@@ -59,9 +60,13 @@ src/                    --> All of the source files for the application
         img             ---> Images
         index.html      ---> Main index
     app/                --> All app specific modules
+      app.component.html -->Main Html of the app
+      app.component.ts      --> Define modules  , routes and the main component
+      globals.ts                     --> Global variables depending on the environment
     main.ts             --> Bootstrap the app
     polyfills.ts        --> Polyfills that allow plugins to run smoothly
     vendor.ts           --> The perfect place to link plugins styles, etc
+    analytics.js         --> A single file to include all analytics scripts
 .gitignore              --> Ignore files in git
 karma-shim.js           --> Shim for karma
 karma.conf.js           --> Config for karma
@@ -74,7 +79,11 @@ typedoc.json            --> Config for typedoc
 typings.json            --> Typings deps
 webpack.config.js       --> Config for this amazing bundler
 ```
+# UI Components
 
+We are using [ng2-bootstrap ](https://valor-software.com/ng2-bootstrap) and plain bootstrap , styles of the components are modified via sass/theme.sass and sass/variables.sass. 
+
+>Pro tip: Be wise using the ng2-bootstrap components; it's better for our code to write <a class="btn btn-danger">Button</a> than import a directive just to show a button
 
 
 # Routines

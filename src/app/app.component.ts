@@ -20,7 +20,7 @@ import { UserLoginComponent } from './user-login';
    ])
  export class AppComponent {
    public constructor(viewContainerRef: ViewContainerRef) {
-     // this hack allows ng2bootstrap to work properly
+     // You need this small hack for ng2bootstrap components. This might show an error in console and in the compiler. But you can ignore it without problem
      this.viewContainerRef = viewContainerRef;
    }
  }
