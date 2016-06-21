@@ -1,7 +1,7 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { HomeComponent } from './home';
-import { AboutComponent } from './about';
+import { DashboardComponent } from './dashboard';
 import { UserLoginComponent } from './user-login';
 
 
@@ -16,7 +16,7 @@ import { UserLoginComponent } from './user-login';
  })
  @RouteConfig([
    {path: '/', component: HomeComponent, name: 'Home'},
-   { path: '/about', component: AboutComponent, name: 'About' }
+   { path: '/dashboard/...', component: DashboardComponent, name: 'Dashboard' }
    ])
  export class AppComponent {
    public constructor(viewContainerRef: ViewContainerRef) {
