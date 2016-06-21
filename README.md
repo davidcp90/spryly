@@ -83,7 +83,7 @@ webpack.config.js       --> Config for this amazing bundler
 
 # UI Components
 
-We are using [ng2-bootstrap ](https://valor-software.com/ng2-bootstrap) and plain bootstrap , styles of the components are modified via sass/theme.sass and sass/variables.sass. 
+We are using [ng2-bootstrap ](https://valor-software.com/ng2-bootstrap) and plain bootstrap , styles of the components are modified via sass/theme.sass and sass/variables.sass.  
 
 >Pro tip: Be wise using the ng2-bootstrap components; it's better for our code to write <a class="btn btn-danger">Button</a> than import a directive just to show a button
 
