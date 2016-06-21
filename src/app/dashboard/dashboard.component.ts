@@ -24,8 +24,11 @@ import {
 })
 @RouteConfig([
 	{ path: '/', component: MainDashboardComponent, name: 'Home', useAsDefault: true },
+	{ path: '/recommendations', component: RecListComponent, name: 'Recommendations' },
 	{ path: '/recommendations/new', component: RecRequestComponent, name: 'New Recommendation' },
-	{ path: '/recommendations/view', component: RecListComponent, name: 'View Recommendations' }
+	{ path: '/recommendations/view', component: RecDetailComponent, name: 'View Recommendation' },
+	{ path: '/recommendations/reply', component: RecReplyComponent, name: 'Reply Recommendation' },
+	
 ])
 export class DashboardComponent {
 
