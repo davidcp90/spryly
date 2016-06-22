@@ -3,13 +3,15 @@ import { Headers, Http } from '@angular/http';
 import sprGlobals = require('../globals');
 import 'rxjs/add/operator/toPromise';
 import { Contact } from './contact';
-
+import { CONTACTS } from './contacts.mock';
 @Injectable()
 export class ContactsService {
     private endpoint = sprGlobals.endpoint;
 
     constructor(private http: Http) { }
-
+    getContacts() {
+        return Promise.resolve(CONTACTS);
+    }
     post(contact: Contact): Promise<string> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         return this.http
