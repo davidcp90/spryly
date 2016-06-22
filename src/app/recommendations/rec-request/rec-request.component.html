@@ -1,1 +1,34 @@
-<h2>New</h2>
+<h2>New recommendation</h2>
+
+<p>Relation Status</p>
+        <label>
+            <input #present name="status" [(ngModel)]="form.status" type="radio" value="0" (click)="form.status = present.value" />
+            Current
+        </label>
+
+        <label>
+            <input #past name="status" [(ngModel)]="form.status" type="radio"  value="1" (click)="form.status = past.value" />
+            Past
+        </label>
+<select placeholder="Relation type">
+    <option value="" disabled selected>Relation type</option>
+    <!--<option *ngFor="let item in types">{{item[status]}}</option>-->
+</select>
+<div>
+<input type="text" placeholder="Contact"  [(ngModel)]="form.contact">
+</div>
+<div>
+<input type="text" placeholder="Contact's name"  [(ngModel)]="form.name">
+</div>
+<div>
+<input type="text" placeholder="Your role name"  [(ngModel)]="form.position">
+</div>
+<div>
+<input type="text" placeholder="Contact role name"  [(ngModel)]="form.contact_position" value="">
+</div>
+<div>
+<input type="text" placeholder="Organization name"  [(ngModel)]="form.organization">
+</div>
+
+<a *ngIf="form.status" class="btn btn-success btn-lg" href="#sendlink">ADD RELATION<a>
+
