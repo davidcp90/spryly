@@ -1,6 +1,5 @@
 <h2>Contacts List</h2>
-<div *ngFor="let contact of contacts">
-<spr-contact-detail [contact]="contact">
+
+<spr-contact-detail template="ngFor let contact of contacts; trackBy:trackByContacts" [contact]="contact">
 
 </spr-contact-detail>
-</div>
