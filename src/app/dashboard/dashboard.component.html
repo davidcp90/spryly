@@ -1,27 +1,8 @@
+<spr-top-nav></spr-top-nav>
 <div class="container-fluid margin-after-nav">
       <div class="row">
-        <div class="col-sm-3 col-md-2">
-          <ul class="nav nav-sidebar">
-            <li><h5>Recommendations</h5></li>
-            <li><a [routerLink]="['Recommendations']"><i class="fa fa-home"></i> Home</a></li>
-            <li><a [routerLink]="['New Recommendation']"><i class="fa fa-plus"></i> New Recommendation</a></li>
-            <li><a [routerLink]="['Reply Recommendation']"><i class="fa fa-reply"></i> Reply Recommendation</a></li>
-            <li><a [routerLink]="['View Recommendation']"><i class="fa fa-eye"></i> View Recommendation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><h5>Contacts</h5></li>
-            <li><a [routerLink]="['Contacts']"><i class="fa fa-home"></i> Contacts list</a></li>
-            <li><a [routerLink]="['Contacts map']"><i class="fa fa-plus"></i>Contacts map</a></li>
-            <li><a [routerLink]="['Contact view']"><i class="fa fa-eye"></i> View Contact</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><h5>Conversations</h5></li>
-            <li><a [routerLink]="['Conversations']"><i class="fa fa-home"></i> Conversations list</a></li>
-            <li><a [routerLink]="['View conversation']"><i class="fa fa-plus"></i>Conversations detail</a></li>
-            <li><a [routerLink]="['New conversation']"><i class="fa fa-eye"></i> New Conversation</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9  col-md-10">
+        <spr-side-nav></spr-side-nav>
+        <div class="col-sm-9">
           <router-outlet></router-outlet>
         </div>
       </div>

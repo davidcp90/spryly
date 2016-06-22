@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import {TopNavComponent} from '../top-nav';
+import {SideNavComponent} from '../side-nav';
 import {MainDashboardComponent} from './main-dashboard.component';
 import { 
 	RecDetailComponent, 
@@ -15,15 +17,17 @@ import {
 	ConversationRequestComponent
 } from '../conversations';
 import {
-	ContactDetailComponent,
 	ContactsService,
+	ContactAddComponent,
 	ContactListComponent,
 	ContactMapComponent
 } from '../contacts';
 
 @Component({
   selector: 'spr-dashboard',
-  directives: [...ROUTER_DIRECTIVES, 
+  directives: [...ROUTER_DIRECTIVES,
+  	  SideNavComponent,
+  	  TopNavComponent,
 	  RecDetailComponent, 
 	  RecListComponent,
 	  RecReplyComponent,
@@ -31,9 +35,9 @@ import {
 	  ConversationDetailComponent,
 	  ConversationListComponent,
 	  ConversationRequestComponent,
-	  ContactDetailComponent,
 	  ContactListComponent,
-	  ContactMapComponent
+	  ContactMapComponent,
+	  ContactAddComponent
   ],
   template: require('./dashboard.component.html')
 })
@@ -44,8 +48,8 @@ import {
 	{ path: '/recommendations/view', component: RecDetailComponent, name: 'View Recommendation' },
 	{ path: '/recommendations/reply', component: RecReplyComponent, name: 'Reply Recommendation' },
 	{ path: '/contacts', component: ContactListComponent, name: 'Contacts' },
-	{ path: '/contacts/view', component: ContactDetailComponent, name: 'Contact view' },
 	{ path: '/contacts/map', component: ContactMapComponent, name: 'Contacts map' },
+	{ path: '/contacts/add', component: ContactAddComponent, name: 'Contacts add' },
 	{ path: '/conversations', component: ConversationListComponent, name: 'Conversations' },
 	{ path: '/conversations/view', component: ConversationDetailComponent, name: 'View conversation' },
 	{ path: '/conversations/new', component: ConversationRequestComponent, name: 'New conversation' },	

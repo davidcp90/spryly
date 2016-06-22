@@ -8,7 +8,7 @@ import { CONTACTS } from './contacts.mock';
 export class ContactsService {
     private endpoint = sprGlobals.endpoint;
 
-    //constructor(private http: Http) { }
+    constructor(private http: Http) { }
     getContacts() {
         return Promise.resolve(CONTACTS);
     }

@@ -3,8 +3,6 @@ import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { HomeComponent } from './home';
 import { DashboardComponent } from './dashboard';
 import { UserLoginComponent } from './user-login';
-
-
 /*
  * App Component
  * Top Level Component
