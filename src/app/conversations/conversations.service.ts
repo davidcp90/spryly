@@ -4,6 +4,7 @@ import sprGlobals = require('../globals');
 import 'rxjs/add/operator/toPromise';
 import { Conversation } from './conversation';
 
+
 @Injectable()
 export class ConversationsService {
     private endpoint = sprGlobals.endpoint;

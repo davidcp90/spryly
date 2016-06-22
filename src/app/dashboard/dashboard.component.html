@@ -14,6 +14,12 @@
             <li><a [routerLink]="['Contacts map']"><i class="fa fa-plus"></i>Contacts map</a></li>
             <li><a [routerLink]="['Contact view']"><i class="fa fa-eye"></i> View Contact</a></li>
           </ul>
+          <ul class="nav nav-sidebar">
+            <li><h3>Conversations</h3></li>
+            <li><a [routerLink]="['Conversations']"><i class="fa fa-home"></i> Conversations list</a></li>
+            <li><a [routerLink]="['View conversation']"><i class="fa fa-plus"></i>Conversations detail</a></li>
+            <li><a [routerLink]="['New conversation']"><i class="fa fa-eye"></i> New Conversation</a></li>
+          </ul>
         </div>
         <div class="col-sm-9  col-md-10">
           <router-outlet></router-outlet>

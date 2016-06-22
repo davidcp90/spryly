@@ -46,7 +46,9 @@ import {
 	{ path: '/contacts', component: ContactListComponent, name: 'Contacts' },
 	{ path: '/contacts/view', component: ContactDetailComponent, name: 'Contact view' },
 	{ path: '/contacts/map', component: ContactMapComponent, name: 'Contacts map' },
-	
+	{ path: '/conversations', component: ConversationListComponent, name: 'Conversations' },
+	{ path: '/conversations/view', component: ConversationDetailComponent, name: 'View conversation' },
+	{ path: '/conversations/new', component: ConversationRequestComponent, name: 'New conversation' },	
 ])
 export class DashboardComponent {
 
