@@ -8,10 +8,11 @@ import { CONTACTS } from './contacts.mock';
 export class ContactsService {
     private endpoint = sprGlobals.endpoint;
 
-    constructor(private http: Http) { }
+    //constructor(private http: Http) { }
     getContacts() {
         return Promise.resolve(CONTACTS);
     }
+    /*
     post(contact: Contact): Promise<string> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         return this.http
@@ -24,6 +25,6 @@ export class ContactsService {
     private handleError(error: any) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
-    }
+    }*/
 
 }

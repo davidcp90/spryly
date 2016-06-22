@@ -5,13 +5,16 @@ import { Contact } from '../contact';
 @Component({
   selector: 'spr-contact-list',
   template: require('./contact-list.component.html'),
-  directives: [ContactDetailComponent]
+  directives: [ContactDetailComponent],
+  providers: [ContactsService]
 })
 
 export class ContactListComponent implements OnInit {
   contacts: Contact[];
+
   constructor(private _contactsService: ContactsService) { }
   getContacts() {
+	  console.log('get contacts');
 	  this._contactsService.getContacts().then(contacts => this.contacts = contacts);
   }
   ngOnInit() { 

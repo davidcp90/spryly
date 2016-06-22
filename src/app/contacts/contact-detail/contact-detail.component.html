@@ -1,1 +1,11 @@
-<h2>Detail</h2>
+<div class="panel panel-default" id="contact">
+    <div class="panel-body">
+        <div class="col-sm-2">
+            <img [src]="contact.picture" [alt]="contact.name" class="img-responsive" />
+        </div>
+        <div class="col-sm-10">
+            <h3>{{contact.name}}</h3>
+            <p>{{contact.email}}</p>
+        </div>
+    </div>
+</div>
