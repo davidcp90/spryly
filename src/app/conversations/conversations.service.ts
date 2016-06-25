@@ -14,7 +14,7 @@ export class ConversationsService {
     post(conv: Conversation): Promise<string> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         return this.http
-            .post(this.endpoint ,JSON.stringify(conv), { headers: headers })
+            .post(this.endpoint , JSON.stringify(conv), { headers: headers })
             .toPromise()
             .then(response => response.json().data)
             .catch(this.handleError);

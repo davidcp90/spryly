@@ -1,0 +1,261 @@
+// Body level
+html, body
+  height: 100%
+  overflow-x: hidden
+body
+  background: $page-bg
+  font-family: 'Heebo', sans-serif !important
+  font-smooth: auto
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.008)
+
+
+
+//Buttons
+.btn
+  border: 0
+  border-radius: 2px
+  font-weight: 500
+  cursor: pointer
+  &.btn-full
+    width: 100% !important
+  &.btn-primary
+    background: $primary
+    color: white
+    transition: all 0.6s ease-in
+    border: 1px solid transparent
+    &:hover
+      background: $primary-light
+  &.btn-link
+    color: $primary
+    border: 1px solid transparent
+    transition: all 0.2s ease-out
+    &:hover
+      border-color: $primary
+      text-decoration: none
+  &.btn-lg
+    padding: 14px
+    font-size: 14px
+    .img-icon
+      width: 22px
+      height: 22px
+      margin-right: 5px
+
+// Dashborad main
+spr-dashboard
+  max-width: 100%
+  overflow-x: hidden
+// Navbar =====================================================================
+.navbar-spryly
+  border-width: 0
+  max-height: 50px !important
+  background: $navbar-default-bg
+  @media screen and (max-width: 992px)
+    z-index: 1
+  .container-nav
+    padding-left: 0
+  .navbar-brand
+    padding-top: 11px
+  .logo
+    height: 26px
+    padding-left: 26px
+  .hamburguer
+    display: none
+    @media screen and (max-width: 768px)
+      display: inline-block
+      outline: none
+      background: url('../public/img/hamburguer.png') no-repeat center center
+      background-size: cover
+      text-indent: -999px
+      border: 0
+      float: left
+      width: 27px
+      height: 19px
+      position: relative
+      top: 16px
+      &:focus
+        outline: none
+
+.navbar-nav
+    &.links
+      margin-left: -9px
+      @media screen and (max-width: 768px)
+        display: none
+    &.navbar-right
+      margin-right: -30px
+      @media screen and (max-width: 768px)
+        float: right
+    li
+      a
+        padding: 16px 25px 10px 25px
+        border-bottom: 4px solid #ccc
+        border-color: $navbar-default-bg
+        transition: all 0.2s ease-in
+        color: $navbar-link
+        font-weight: 500
+        font-size: 14px
+        cursor: pointer
+        &.active
+          color: $navbar-link-active
+          border-color: white
+          background: transparent
+          font-weight: 700
+        &:hover
+          color: $navbar-link-active
+          background: transparent
+          font-weight: 700
+        &.icon-item
+          border: 0 !important
+          text-indent: -9999px
+          padding: 25px 0 5px 0
+          @media screen and (max-width: 768px)
+            padding-top: 8px
+          &:hover
+            border: 0 !important
+          &.notifications
+            background: url('../public/img/notifications.png') center center no-repeat
+            background-size: 19px 19px;
+            &.active
+              background-image: url('../public/img/notifications-red.png') !important
+.sidenav
+  height: 100vh
+  text-align: center
+  padding-top: 50px
+  background: rgba(255,255,255,0.8)
+  -webkit-box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.14)
+  -moz-box-shadow:    2px 0px 4px 0px rgba(0, 0, 0, 0.14)
+  box-shadow:         2px 0px 4px 0px rgba(0, 0, 0, 0.14)
+  transition: all 0.2s ease-in
+  @media screen and (max-width: 768px)
+    position: relative
+    left: -67%
+    &.show
+      left: 0
+
+  &::after
+    background: url('../public/img/background.jpg') center no-repeat
+    background-size: cover
+    content: ""
+    opacity: 0.85
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    position: absolute
+    -webkit-filter: blur(2px)
+    -moz-filter: blur(2px)
+    -o-filter: blur(2px)
+    -ms-filter: blur(2px)
+    filter: blur(2px)
+    z-index: -1
+  .content
+    width: 90%
+    margin: 0 auto
+    @media screen and (min-width: 768px) and (max-width: 992px)
+      width: 98%
+  .edit
+    display: block
+    background: url('../public/img/edit.png') top right no-repeat
+    background-size: 45%
+    padding: 22px 22px
+    width: 22px
+    height: 40px
+    float: right
+    position: relative
+    top: 20px
+    font-size: 12px
+    color: $primary
+    cursor: pointer
+    text-indent: -9999px
+    &:hover
+      text-indent: 0
+  .section-profile
+    @media screen and (max-width: 768px)
+      margin-top: -20px
+  .profile-picture
+    width: 155px
+    height: 155px
+    border: 4px solid #fff
+    border-radius: 50%
+    margin: 20px auto 20px auto
+    transition: all 0.3s ease-in
+    @media screen and (max-width: 768px)
+      width: 55px
+      height: 55px
+      float: left
+      margin-right: 15px
+    &:hover
+      border-color: $primary
+    img
+      border-radius: 50%
+      width: 100%
+      height: auto
+      border: 8px solid transparent
+      position: relative
+      @media screen and (max-width: 768px)
+        border: 2px solid transparent
+  .profile-names
+    @media screen and (max-width: 768px)
+      float: left
+  .name
+    font-weight: 500
+    font-size: 18px
+    color: $text-bold
+    @media screen and (max-width: 768px)
+      font-size: 16px
+  .role
+    font-weight: 400
+    font-size: 14px
+    color: $text-primary
+    @media screen and (max-width: 768px)
+      font-size: 13px
+  .stats, .section-cta
+    margin-top: 57px
+  .stats
+    width: 110px
+    margin-left: auto
+    margin-right: auto
+    @media screen and (max-width: 768px)
+      margin-top: 5px
+    .stat
+      font-size: 13px
+      color: $primary
+      font-weight: 700
+      margin-right: 10px
+      .img-icon
+        &.recommendations
+          width: 15px
+          height: auto
+        &.contacts
+          width: 24px
+          height: auto
+  .links-xs
+    display: none
+    @media screen and (max-width: 768px)
+      display: block
+      margin-top: 30px
+    .btn
+      text-align: left !important
+      padding: 10px 0 !important
+      &:hover
+        border-color: transparent !important
+        color: $primary-light
+  .logout
+    position: absolute
+    bottom: 30px
+    left: 20px
+    .btn-link
+      &:hover
+        border: 1px solid transparent
+
+.notification-center
+  height: 100vh
+  padding-top: 50px
+  position: absolute !important
+  top: 0
+  right: -500px
+  background: $dark
+  transition: 0.2s all ease-in
+  &.show
+    right: 0

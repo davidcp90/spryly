@@ -1,21 +1,35 @@
-<div class="col-sm-3">
-          <ul class="nav nav-sidebar">
-            <li><h5>Recommendations</h5></li>
-            <li><a [routerLink]="['Recommendations']"><i class="fa fa-list"></i> List</a></li>
-            <li><a [routerLink]="['New Recommendation']"><i class="fa fa-certificate"></i> New Recommendation</a></li>
-            <li><a [routerLink]="['Reply Recommendation']"><i class="fa fa-reply"></i> Reply Recommendation</a></li>
-            <li><a [routerLink]="['View Recommendation']"><i class="fa fa-eye"></i> View Recommendation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><h5>Contacts</h5></li>
-            <li><a [routerLink]="['Contacts add']"><i class="fa fa-user-plus"></i> Add Contact</a></li>
-            <li><a [routerLink]="['Contacts']"><i class="fa fa-users"></i> Contacts list</a></li>
-            <li><a [routerLink]="['Contacts map']"><i class="fa fa-share-alt"></i> Contacts map</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><h5>Conversations</h5></li>
-            <li><a [routerLink]="['Conversations']"><i class="fa fa-home"></i> Conversations list</a></li>
-            <li><a [routerLink]="['View conversation']"><i class="fa fa-plus"></i>Conversations detail</a></li>
-            <li><a [routerLink]="['New conversation']"><i class="fa fa-eye"></i> New Conversation</a></li>
-          </ul>
+  <div class="col-xs-8 col-sm-4 col-md-4 col-lg-3 sidenav" id="sidenav">
+  <span class="edit">Edit</span>
+  <div class="content">
+    <div class="section-profile">
+      <div class="profile-picture">
+        <img src="http://lorempixel.com/200/200/people/8"  alt="" />
+      </div>
+      <div class="profile-names">
+        <h3 class="name">Ebenezer Doe</h3>
+        <h5 class="role">ENIAC Developer</h5>
+        <div class="stats">
+          <span class="stat">
+            <img class="img-icon recommendations" src="/img/badge.png" alt=""> 14
+          </span>
+          <span class="stat">
+            <img class="img-icon contacts" src="/img/contacts.png" alt=""> 32
+          </span>
         </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="links-xs">
+    <a href="" class="btn btn-link btn-full btn-lg">Recommendations</a>
+      <a href="" class="btn btn-link btn-full btn-lg">Conversations</a>
+      <a href="" class="btn btn-link btn-full btn-lg">Contacts</a>
+    </div>
+    <div class="section-cta">
+      <a href="" class="btn btn-primary  btn-lg"><img class="img-icon" src="/img/request.png" alt="">Request Recommendation</a>
+      <a href="" class="btn btn-link btn-lg mt-10"><img class="img-icon" src="/img/conversation.png" alt="">Create New Conversation</a>
+      </div>
+    <div class="logout">
+      <a href="" class="btn btn-link btn-full btn-lg mt-10"><img class="img-icon" src="/img/logout.png" alt="">Log Out</a>
+    </div>
+  </div>
+  </div>

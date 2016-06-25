@@ -1,21 +1,20 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img  width="32" class="logo" src="./img/temp.png" alt="Spryly"></a>
+<nav class="navbar navbar-spryly navbar-fixed-top" id="main-nav">
+  <div class="container-fluid container-nav">
+    <div class="col-sm-4 col-md-4 col-lg-3">
+      <button class="hamburguer" (click)="toggleSidenav()">Show menu</button>
+      <a class="navbar-brand" href="#"><img class="logo" src="./img/logo.png" alt="Spryly"></a>
     </div>
-    <div class="collapse navbar-collapse" id="collapse-menu">
-      <ul class="nav navbar-nav">
-        <!--<li><a [routerLink]="['Home']">Home<span class="sr-only">(current)</span></a></li>
-        <li><a [routerLink]="['Dashboard']">Dashboard</a></li>-->
+    <div class="col-sm-8 col-md-8 col-lg-9">
+      <ul class="nav navbar-nav links">
+        <!--<li><a [routerLink]="['/dashboard/recommendations']">Recommendations</a></li>
+        <li><a [routerLink]="['/dashboard/conversations']">Conversations</a></li>
+        <li><a [routerLink]="['/dashboard/conversations']">Conversations</a></li>-->
+        <li><a class="active">Recommendations</a></li>
+        <li><a >Conversations</a></li>
+        <li><a >Contacts</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!--<li><a href="javascript:void(0);" onclick="document.getElementById('show-login').click();">Login</a></li>-->
+        <li><a class="icon-item notifications" (click)="toggleNotifications()">Notification Center</a></li>
       </ul>
     </div>
   </div>

@@ -8,13 +8,15 @@ import { UserLoginComponent } from './user-login';
  * Top Level Component
  */
  @Component({
-   selector: 'spr-app', 
+   selector: 'spr-app',
    directives: [ ROUTER_DIRECTIVES, UserLoginComponent],
    template: require('./app.component.html'),
  })
  export class AppComponent {
    public constructor(viewContainerRef: ViewContainerRef) {
-     // You need this small hack for ng2bootstrap components. This might show an error in console and in the compiler. But you can ignore it without problem
+     // You need this small hack for ng2bootstrap components. 
+     // This might show an error in console and in the compiler. 
+     // But you can ignore it without problem
      this.viewContainerRef = viewContainerRef;
    }
  }

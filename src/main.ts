@@ -24,4 +24,4 @@ bootstrap(AppComponent, [
     APP_ROUTER_PROVIDERS,
     { provide: LocationStrategy, useClass: HashLocationStrategy } // use #/ routes, remove this for HTML5 mode
   ])
-  .catch(err => console.error('error bootstraping'+err));
+.catch(err => console.error('error bootstraping' + err));

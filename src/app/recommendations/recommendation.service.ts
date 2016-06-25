@@ -13,7 +13,7 @@ export class RecommendationService {
     post(rec: Recommendation): Promise<string> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         return this.http
-            .post(this.endpoint ,JSON.stringify(rec), { headers: headers })
+            .post(this.endpoint , JSON.stringify(rec), { headers: headers })
             .toPromise()
             .then(response => response.json().data)
             .catch(this.handleError);

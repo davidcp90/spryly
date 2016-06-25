@@ -6,9 +6,9 @@ import { Contact } from '../contact';
 })
 
 export class ContactDetailComponent implements OnInit {
-	@Input() contact: Contact;
-	constructor() { }
+  @Input() contact: Contact;
+  constructor() { }
 
-	ngOnInit() { }
+  ngOnInit() { }
 
 }

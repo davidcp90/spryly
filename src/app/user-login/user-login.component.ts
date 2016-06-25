@@ -13,13 +13,13 @@ import { AuthenticationService } from '../authentication/authentication.service'
 })
 export class UserLoginComponent implements OnInit {
     error: string;
-    token: string = ''
+    token: string = '';
     user: User = {
         username: '',
         password: ''
-    }
+    };
 
-    constructor(private authenticationService: AuthenticationService) { }
+    constructor(private authenticationService: AuthenticationService) { };
 
     ngOnInit() {}
 
