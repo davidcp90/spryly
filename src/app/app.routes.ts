@@ -37,9 +37,9 @@ export const DashboardRoutes: RouterConfig = [
   component: DashboardComponent,
   children: [
   { path: '', redirectTo: '/dashboard/recommendations', terminal: true },
-  { path: 'contacts', component: ContactListComponent },
-  { path: 'contacts/map', component: ContactMapComponent },
-  { path: 'contacts/add', component: ContactAddComponent },
+  { path: 'network', component: ContactListComponent },
+  { path: 'network/map', component: ContactMapComponent },
+  { path: 'network/add', component: ContactAddComponent },
   { path: 'recommendations', component: RecListComponent },
   { path: 'recommendations/new', component: RecRequestComponent },
   { path: 'recommendations/view', component: RecDetailComponent },

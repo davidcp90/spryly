@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
 @Component({
   selector: 'spr-top-nav',
-  template: require ('./top-nav.component.html')
+  template: require ('./top-nav.component.html'),
+  directives: [ROUTER_DIRECTIVES]
 })
 export class TopNavComponent implements OnInit {
   constructor() {}
-
   ngOnInit() {
-
   }
   toggleSidenav(){
     let sidenav=document.getElementById('sidenav');
