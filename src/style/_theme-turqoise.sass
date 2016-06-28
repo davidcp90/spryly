@@ -11,8 +11,13 @@ body
   text-shadow: 1px 1px 1px rgba(0,0,0,0.008)
 
 //Typography
+h1, h2, h3, h4, h5, h6
+  font-weight: 500
 h1
   font-size: 36px
+  &.dashboard-title
+    font-weight: 300
+    color: $primary
 h2
   font-size: 24px
 h3
@@ -265,3 +270,51 @@ spr-dashboard
   transition: 0.2s all ease-in
   &.show
     right: 0
+
+//Forms
+.spryly-form
+  background: white
+  padding: 15px
+  margin: 20px 0
+  border-radius: 2px
+.form-group
+  label
+    font-size: 14px
+    font-weight: 500
+  .form-control, select.form-control
+    border: 1px solid #DEDEDE
+    border-radius: 2px !important
+    padding: 16.5px 12px
+    box-shadow: 0
+  .radio
+    label
+      display: block
+      cursor: pointer
+      line-height: 2.5
+    [type="radio"]
+      border: 0
+      clip: rect(0 0 0 0)
+      height: 1px 
+      margin: -1px
+      overflow: hidden
+      padding: 0
+      position: absolute
+      width: 1px
+      + span
+        display: block
+        &:before
+          content: ''
+          display: inline-block
+          width: 15px
+          height: 15px
+          vertical-align: -0.25em
+          border-radius: 1em
+          border: 2px solid #fff
+          box-shadow: 0 0 0 1px #DEDEDE
+          margin-right: 0.75em
+          transition: 0.5s ease all
+      &:checked + span:before
+        background: $primary
+        box-shadow: 0 0 0 2px #00C0C0
+
+

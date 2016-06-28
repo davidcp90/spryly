@@ -20,14 +20,14 @@
     </div>
     <div class="clearfix"></div>
     <div class="links-xs">
-    <a href="" class="btn btn-link btn-full btn-lg">Recommendations</a>
-      <a href="" class="btn btn-link btn-full btn-lg">Conversations</a>
-      <a href="" class="btn btn-link btn-full btn-lg">Contacts</a>
+    <a [routerLink]="['/dashboard/recommendations']" class="btn btn-link btn-full btn-lg">Recommendations</a>
+      <a [routerLink]="['/dashboard/conversations']" class="btn btn-link btn-full btn-lg">Conversations</a>
+      <a [routerLink]="['/dashboard/network']" class="btn btn-link btn-full btn-lg">Contacts</a>
       <a href="" class="btn btn-link btn-full btn-lg"><img class="img-icon" src="/img/logout.png" alt=""> Log Out</a>
     </div>
     <div class="section-cta">
-      <a href="" class="btn btn-primary  btn-lg"><img class="img-icon" src="/img/request.png" alt="">Request Recommendation</a>
-      <a href="" class="btn btn-link btn-lg mt-10"><img class="img-icon" src="/img/conversation.png" alt="">Create New Conversation</a>
+      <a [routerLink]="['/dashboard/recommendations/new']" class="btn btn-primary  btn-lg"><img class="img-icon" src="/img/request.png" alt="">Request Recommendation</a>
+      <a [routerLink]="['/dashboard/conversations/new']" class="btn btn-link btn-lg mt-10"><img class="img-icon" src="/img/conversation.png" alt="">Create New Conversation</a>
       </div>
     <div class="logout">
       <a href="" class="btn btn-link btn-full btn-lg mt-10"><img class="img-icon" src="/img/logout.png" alt=""> Log Out</a>

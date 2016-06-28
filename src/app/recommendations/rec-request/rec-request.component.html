@@ -1,34 +1,46 @@
-<h2>New recommendation</h2>
-
-<p>Relation Status</p>
-        <label>
-            <input #present name="status" [(ngModel)]="form.status" type="radio" value="0" (click)="form.status = present.value" />
-            Current
-        </label>
-
-        <label>
-            <input #past name="status" [(ngModel)]="form.status" type="radio"  value="1" (click)="form.status = past.value" />
-            Past
-        </label>
-<select placeholder="Relation type">
-    <option value="" disabled selected>Relation type</option>
-    <!--<option *ngFor="let item in types">{{item[status]}}</option>-->
-</select>
-<div>
-<input type="text" placeholder="Contact"  [(ngModel)]="form.contact">
-</div>
-<div>
-<input type="text" placeholder="Contact's name"  [(ngModel)]="form.name">
-</div>
-<div>
-<input type="text" placeholder="Your role name"  [(ngModel)]="form.position">
-</div>
-<div>
-<input type="text" placeholder="Contact role name"  [(ngModel)]="form.contact_position" value="">
-</div>
-<div>
-<input type="text" placeholder="Organization name"  [(ngModel)]="form.organization">
-</div>
-
-<a *ngIf="form.status" class="btn btn-success btn-lg" href="#sendlink">ADD RELATION<a>
-
+<h1 class="dashboard-title">Request recommendation</h1>
+<form  class="spryly-form">
+    <div class="form-group">
+        <label for="status">What is the current status of the relationship?</label>
+        <div class="radio">
+            <label for="present">
+            <input id="present"ent name="status" [(ngModel)]="form.status" type="radio" value="0" (click)="form.status = present.value" />
+            <span>In course</span>
+            </label>
+        </div>
+        <div class="radio"> 
+            <label for="past">
+                <input id="past" name="status" [(ngModel)]="form.status" type="radio" value="1" (click)="form.status = past.value" />
+                <span>Past</span>
+            </label>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="form-group">
+        <label for="relation">What type of relationship do you have?</label>
+        <select class="form-control" placeholder="Relation type">
+            <option value="" disabled selected>Select one</option>
+            <option value="">Employee</option>
+            <option value="">Manager</option>
+            <!--<option *ngFor="let item in types">{{item[status]}}</option>-->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="contact">Contact email</label>
+        <input class="form-control" type="text" placeholder="Ex. boss@spryly.co" [(ngModel)]="form.contact">
+    </div>
+    <div class="form-group">
+        <label for="position">Your role name</label>
+        <input class="form-control" type="text" placeholder="Ex. Sales rep" [(ngModel)]="form.position">
+    </div>
+    <div class="form-group">
+        <label for="contact_position">Your contact role</label>
+        <input class="form-control" type="text" placeholder="Ex. Financial Lead" [(ngModel)]="form.contact_position" value="">
+    </div>
+    <div class="form-group">
+        <label for="organization">Organization</label>
+        <input class="form-control" type="text" placeholder="Ex. Apple Computers" [(ngModel)]="form.organization">
+    </div>
+    <a  class="btn btn-primary btn-lg pull-right" href="#sendlink">Send Request</a>
+    <div class="clearfix"></div>
+</form>
