@@ -19,6 +19,9 @@ h1
     font-size: 24px
     font-weight: 300
     color: $primary
+    .material-icons
+      position: relative
+      top: 4px
 h2
   font-size: 24px
 h3
@@ -34,7 +37,7 @@ h6
 //Buttons
 .btn
   border: 0
-  border-radius: 2px
+  border-radius: 3px
   font-weight: 500
   cursor: pointer
   padding: 13px 15px
@@ -47,6 +50,16 @@ h6
     border: 1px solid transparent
     &:hover
       background: $primary-light
+  &.btn-default
+    color: $primary
+    border: 1px solid transparent
+    border-color: $primary
+    transition: all 0.2s ease-out
+    &:hover
+      border-color: $primary-light
+      background: $primary-light
+      color: white
+      text-decoration: none
   &.btn-link
     color: $primary
     border: 1px solid transparent
@@ -56,10 +69,13 @@ h6
       text-decoration: none
   &.btn-lg
     font-size: 14px
-    .img-icon
-      width: 22px
-      height: 22px
-      margin-right: 5px
+  .material-icons
+    font-size: 22px
+    margin-right: 5px
+    line-height: 30px
+  span
+    position: relative
+    top: -7px
 
 // Dashborad main
 spr-dashboard
@@ -278,6 +294,27 @@ spr-dashboard
   padding: 15px
   margin: 20px 0
   border-radius: 2px
+  &.has-fieldset
+    padding: 0 0 15px 0
+    fieldset
+      padding: 0
+      .content-field
+        padding: 15px
+    legend
+      font-weight: 500
+      font-size: 16px
+      color: $primary
+      border-bottom: 1px solid #ECECEC
+      padding: 15px
+      margin-bottom: 0
+  .form-cta
+    width: 30%
+    margin: 30px auto 0 auto
+    display: block
+    @media screen and (max-width: 992px)
+      width: 50%
+    @media screen and (max-width: 768px)
+      width: 80%
 .form-group
   label
     font-size: 14px
@@ -287,6 +324,49 @@ spr-dashboard
     border-radius: 2px !important
     padding: 16.5px 12px
     box-shadow: 0
+  .file-control
+    width: 100%
+    background: $page-bg
+    border-radius: 5px
+    border: 0
+    padding: 15px
+    overflow: hidden
+    position: relative
+    cursor: pointer
+    opacity: 0.6
+    transition: 0.3s all linear
+    &:hover
+      opacity: 1
+    [type=file]
+      cursor: inherit
+      display: block
+      font-size: 999px
+      filter: alpha(opacity=0)
+      min-height: 100%
+      min-width: 100%
+      opacity: 0
+      position: absolute
+      right: 0
+      text-align: right
+      top: 0
+    label
+      font-size: 16px
+      color: #848484
+      position: relative
+      top: -2px
+      .material-icons
+        position: relative
+        top: 8px
+
+  .survey-question
+    padding: 0
+    .form-control
+      display: inline-block
+      width: 70%
+    .btn
+      display: inline-block
+      width: 26%
+      padding: 1px 15px
   .radio
     label
       display: block
