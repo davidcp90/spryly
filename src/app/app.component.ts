@@ -13,10 +13,4 @@ import { UserLoginComponent } from './user-login';
    template: require('./app.component.html'),
  })
  export class AppComponent {
-   public constructor(viewContainerRef: ViewContainerRef) {
-     // You need this small hack for ng2bootstrap components. 
-     // This might show an error in console and in the compiler. 
-     // But you can ignore it without problem
-     this.viewContainerRef = viewContainerRef;
-   }
  }
