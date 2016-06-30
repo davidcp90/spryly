@@ -13,8 +13,10 @@ import { UserLoginComponent } from './user-login';
    template: require('./app.component.html'),
  })
  export class AppComponent {
-     public constructor(viewContainerRef:ViewContainerRef) {
-    // You need this small hack in order to catch application root view container ref
-    this.viewContainerRef = viewContainerRef;
-  }
+    public viewContainerRef:ViewContainerRef;
+
+    public constructor(viewContainerRef:ViewContainerRef) {
+      // You need this small hack in order to catch application root view container ref
+      this.viewContainerRef = viewContainerRef;
+    }
  }
