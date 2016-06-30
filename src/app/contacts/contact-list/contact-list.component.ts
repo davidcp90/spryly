@@ -9,15 +9,18 @@ import { Contact } from '../contact';
   providers: [ContactsService]
 })
 
-export class ContactListComponent implements OnInit {
+export class ContactListComponent implements OnInit{
   contacts: Contact[];
 
-  constructor(private _contactsService: ContactsService) { }
+  constructor(private _contactsService: ContactsService) {
+  }
   getContacts() {
     this._contactsService.getContacts().then(contacts => this.contacts = contacts);
   }
-  ngOnInit() {
-    this.getContacts();
+  ngOnInit(){
+                this.getContacts();  
   }
+
+    
 
 }

@@ -1,0 +1,21 @@
+{
+  "name": "spryly",
+  "description": "package not available in npm",
+  "main": "",
+  "authors": [
+    "David Camargo <davidcp90@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bunnyinc/solarr-app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "better-dateinput-polyfill": "^2.0.0"
+  }
+}
