@@ -15,8 +15,9 @@ export class UserLoginComponent implements OnInit {
     error: string;
     token: string = '';
     user: User = {
-        username: '',
-        password: ''
+        email: '',
+        password: '',
+        rememberMe: false
     };
 
     constructor(private authenticationService: AuthenticationService) { };
@@ -25,7 +26,14 @@ export class UserLoginComponent implements OnInit {
 
     login() {
         this.authenticationService.login(this.user)
-            .then(token => this.token = token)
+            .then(token =>
+                this.storeToken(token)
+            )
             .catch(error => this.error = error);
+    }
+
+    private storeToken(token) {
+        this.token = token;
+        localStorage.setItem("token", token);
     }
 }

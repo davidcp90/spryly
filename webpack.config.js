@@ -257,6 +257,15 @@ module.exports = function makeWebpackConfig() {
       "Access-Control-Allow-Origin": "http://localhost:9000", 
       "Access-Control-Allow-Credentials": "true" 
     },
+    proxy: {
+      '/api/*': {
+        target: 'http://localhost:9000',
+        secure: false,
+        rewrite: function (req){
+         req.url = req.url.replace(/^\/api(.+)$/,'$1');
+        }
+      }
+    },
     historyApiFallback: true,
     stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
   };

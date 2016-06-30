@@ -7,21 +7,21 @@ import { User } from '../authentication/user';
 
 @Injectable()
 export class AuthenticationService {
-    private authenticationUrl = sprGlobals.endpoint;
+    private authenticationUrl = sprGlobals.endpoint + '/users/signIn';
 
     constructor(private http: Http) { }
 
-    login(user: User): Promise<string> {
+    login(user: User): Promise<JSON> {
         return this.post(user);
     }
 
-    private post(user: User): Promise<string> {
+    private post(user: User): Promise<JSON> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
 
         return this.http
             .post(this.authenticationUrl, JSON.stringify(user), { headers: headers })
             .toPromise()
-            .then(response => response.json().data)
+            .then(response => response.json().token)
             .catch(this.handleError);
     }
 
