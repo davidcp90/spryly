@@ -6,6 +6,7 @@ import {
   RecDetailComponent,
   RecListComponent,
   RecReplyComponent,
+  RecReplyLandingComponent,
   RecRequestComponent
 } from './recommendations';
 import {
@@ -48,6 +49,10 @@ export const DashboardRoutes: RouterConfig = [
   { path: 'conversations/view', component: ConversationDetailComponent },
   { path: 'conversations/new', component: ConversationRequestComponent },
   ]
+},
+{
+  path: 'recommendation',
+  component: RecReplyLandingComponent
 }
 ];
 export const APP_ROUTER_PROVIDERS = [
