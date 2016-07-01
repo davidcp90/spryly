@@ -19,6 +19,11 @@ import {
   ContactListComponent,
   ContactMapComponent
 } from './contacts';
+import {
+  UserComponent,
+  UserSignInComponent,
+  UserSignUpComponent
+} from './users';
 export const DashboardRoutes: RouterConfig = [
 {
   path: '',
@@ -53,8 +58,21 @@ export const DashboardRoutes: RouterConfig = [
 {
   path: 'recommendation',
   component: RecReplyLandingComponent
-}
-];
+},
+{
+  path: 'users',
+  component: UserComponent,
+  children: [
+    {
+      path: 'signin',
+      component: UserSignInComponent
+    },
+    {
+      path: 'signup',
+      component: UserSignUpComponent
+    }
+  ]
+}];
 export const APP_ROUTER_PROVIDERS = [
 provideRouter(DashboardRoutes)
 ];

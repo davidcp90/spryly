@@ -1,5 +1,5 @@
 <h1 class="dashboard-title"><i class="material-icons">add_circle_outline</i> Request recommendation</h1>
-<form  class="spryly-form">
+<form class="spryly-form">
     <div class="form-group">
         <label for="status">What is the current status of the relationship?</label>
         <div class="radio">
@@ -8,7 +8,7 @@
             <span>In course</span>
             </label>
         </div>
-        <div class="radio"> 
+        <div class="radio">
             <label for="past">
                 <input id="past" name="status" [(ngModel)]="form.status" type="radio" value="1" (click)="form.status = past.value" />
                 <span>Past</span>
