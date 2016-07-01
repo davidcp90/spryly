@@ -18,13 +18,4 @@ export class TopNavComponent implements OnInit {
       sidenav.className=sidenav.className.replace("show","");
     }
   }
-  toggleNotifications(){
-    let notifications=document.getElementById('notification-center');
-    if(!notifications.className.match('show')){
-      notifications.className += " show";
-    }
-    else{
-      notifications.className=notifications.className.replace("show","");
-    }
-  }
 }
