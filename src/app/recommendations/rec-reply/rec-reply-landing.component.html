@@ -1,6 +1,37 @@
 <div class="landing">
-  <div class="landing-form">
-   <spr-rec-reply-form>
-   </spr-rec-reply-form> 
-  </div>
+    <!--form state-->
+    <div class="landing-form" id="landing-form">
+        <div class="row head-landing">
+            <div class="col-xs-8">
+                <h3 class="text-primary">Recommendation Request</h3>
+            </div>
+            <div class="col-xs-4">
+                <img class="logo-landing" src="img/logo-turq.png" alt="">
+            </div>
+        </div>
+        <hr/>
+        <spr-rec-reply-form>
+        </spr-rec-reply-form>
+    </div>
+    <!--thanks state-->
+    <div class="landing-form" id="thanks" *ngIf="submitted">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 text-center">
+          <img class="img" src="img/thanks.png" alt="You recommend your friend">
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <h2 class="text-primary">Thanks! for helping friend</h2>
+          <p class="tx-med">We want to make your professional life fulfilling in a spryly way, this is how it works:</p>
+          <ul class="chulos-list">
+            <li>Request your own recommendations</li>
+            <li>Expand your network</li>
+            <li>Ask people for feedback on what really matters</li>
+          </ul>
+          <div class="mt-20">
+            <button class="btn btn-primary">Create your account</button>
+            <a href="" class="btn btn-link">Check Spryly.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
