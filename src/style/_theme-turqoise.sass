@@ -9,7 +9,8 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-shadow: 1px 1px 1px rgba(0,0,0,0.008)
-
+.jumbotron
+  background: white
 //Typography
 h1, h2, h3, h4, h5, h6
   font-weight: 500
@@ -82,6 +83,46 @@ spr-dashboard
   max-width: 100%
   overflow-x: hidden
 // Navbar =====================================================================
+.navbar-transparent
+  background: transparent
+  border-width: 0
+  height: 55px
+  top: 30px
+  &.add-turqoise
+    background: $primary
+    top: 0
+  .container-nav
+    padding-left: 0
+  .navbar-brand
+    padding-top: 13px
+  .logo
+    height: 35px
+    padding-left: 60px
+    @media screen and (max-width: 768px)
+      padding-left: 10px
+  .navbar-right
+    padding-right: 60px
+    @media screen and (max-width: 768px)
+      padding-left: 10px !important
+      li
+        a
+          padding: 10px 0
+  .hamburguer
+    display: none
+    @media screen and (max-width: 768px)
+      display: inline-block
+      outline: none
+      background: url('../public/img/hamburguer.png') no-repeat center center
+      background-size: cover
+      text-indent: -999px
+      border: 0
+      float: right
+      width: 27px
+      height: 19px
+      position: relative
+      top: 16px
+      &:focus
+        outline: none
 .navbar-spryly
   border-width: 0
   max-height: 50px !important
@@ -131,6 +172,13 @@ spr-dashboard
         font-weight: 500
         font-size: 14px
         cursor: pointer
+        &.white
+          border: 0 !important
+          color: white
+          padding: 16px 15px 10px 15px
+          &.no-pad
+            padding-left: 0
+            padding-right: 0
         &.active
           color: $navbar-link-active
           border-color: white
@@ -313,14 +361,14 @@ hr
       border-bottom: 1px solid #ECECEC
       padding: 15px 30px
       margin-bottom: 0
-  .form-cta
-    width: 30%
-    margin: 30px auto 0 auto
-    display: block
-    @media screen and (max-width: 992px)
-      width: 50%
-    @media screen and (max-width: 768px)
-      width: 80%
+.form-cta
+  width: 30%
+  margin: 30px auto 0 auto
+  display: block
+  @media screen and (max-width: 992px)
+    width: 50%
+  @media screen and (max-width: 768px)
+    width: 80%
 .form-group
   label
     font-size: 14px

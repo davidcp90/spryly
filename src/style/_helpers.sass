@@ -1,4 +1,3 @@
-
 .padding-after-nav
   padding-top: 50px
 .mb-2
@@ -19,6 +18,10 @@
   font-size: 12px
 .tx-14
   font-size: 14px
+.tx-24
+  font-size: 24px
+.tx-22
+  font-size: 22px
 .tx-med
   font-weight: 500
 .tx-light
@@ -29,7 +32,23 @@
   font-weight: 700
 .tx-gray
   color: $text-gray
+.tx-wh
+  color: white
 .text-primary
   color: $primary
 
+//Flexbox
+.flex-container
+  display: flex
+  @media screen and (max-width: 768px)
+    &.fall-xs
+      flex-direction: column
+.flex-space
+  justify-content: space-between
+.flex-30
+  width: 30%
+  padding: 2%
+  @media screen and (max-width: 768px)
+    width: 100%
+    margin-top: 30px
 
