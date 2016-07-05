@@ -1,46 +1,70 @@
 <h1 class="dashboard-title"><i class="material-icons">add_circle_outline</i> Request recommendation</h1>
-<form class="spryly-form">
-    <div class="form-group">
-        <label for="status">What is the current status of the relationship?</label>
-        <div class="radio">
-            <label for="present">
-            <input id="present"ent name="status" [(ngModel)]="form.status" type="radio" value="0" (click)="form.status = present.value" />
-            <span>In course</span>
-            </label>
-        </div>
-        <div class="radio">
-            <label for="past">
-                <input id="past" name="status" [(ngModel)]="form.status" type="radio" value="1" (click)="form.status = past.value" />
-                <span>Past</span>
-            </label>
-        </div>
-        <div class="clearfix"></div>
+
+<form class="spryly-form" (ngSubmit)="request()">
+  <div class="form-group">
+    <label for="status">What is the current status of the relationship?</label>
+    <div class="radio">
+      <label for="present">
+        <input id="present" type="radio" name="status" (click)="status = '0'" [checked]="status == 0" />
+        <span>In course</span>
+      </label>
     </div>
-    <div class="form-group">
-        <label for="relation">What type of relationship do you have?</label>
-        <select class="form-control" placeholder="Relation type">
-            <option value="" disabled selected>Select one</option>
-            <option value="">Employee</option>
-            <option value="">Manager</option>
-            <!--<option *ngFor="let item in types">{{item[status]}}</option>-->
-        </select>
+    <div class="radio">
+      <label for="past">
+        <input id="past" type="radio" name="status" (click)="status = '1'" [checked]="status == 1" />
+        <span>Past</span>
+      </label>
     </div>
-    <div class="form-group">
-        <label for="contact">Contact email</label>
-        <input class="form-control" type="text" placeholder="Ex. boss@spryly.co" [(ngModel)]="form.contact">
-    </div>
-    <div class="form-group">
-        <label for="position">Your role name</label>
-        <input class="form-control" type="text" placeholder="Ex. Sales rep" [(ngModel)]="form.position">
-    </div>
-    <div class="form-group">
-        <label for="contact_position">Your contact role</label>
-        <input class="form-control" type="text" placeholder="Ex. Financial Lead" [(ngModel)]="form.contact_position" value="">
-    </div>
-    <div class="form-group">
-        <label for="organization">Organization</label>
-        <input class="form-control" type="text" placeholder="Ex. Apple Computers" [(ngModel)]="form.organization">
-    </div>
-    <a  class="btn btn-primary btn-lg form-cta" href="#sendlink"> <i class="material-icons">send</i> <span>Send Request</span></a>
     <div class="clearfix"></div>
+  </div>
+  <div class="form-group">
+    <label for="relation">What type of relationship do you have?</label>
+    <select class="form-control" placeholder="Relation type">
+      <option value="" disabled selected>Select one</option>
+      <option value="">Employee</option>
+      <option value="">Manager</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="contact">Contact email</label>
+    <input class="form-control" type="text" placeholder="Ex. boss@spryly.co" [(ngModel)]="network.targetEmail">
+  </div>
+  <div class="form-group">
+    <label for="position">Your role name</label>
+    <input class="form-control" type="text" placeholder="Ex. Sales rep" [(ngModel)]="network.sourceRole">
+  </div>
+  <div class="form-group">
+    <label for="contact_position">Your contact role</label>
+    <input class="form-control" type="text" placeholder="Ex. Financial Lead" [(ngModel)]="network.targetRole">
+  </div>
+  <div class="form-group">
+    <label for="organization">Organization</label>
+    <input class="form-control" type="text" placeholder="Ex. Apple Computers" [(ngModel)]="network.organization">
+  </div>
+  <p>
+    <label for="start">From</label>
+    <select class="form-control" [(ngModel)]="network.startMonth">
+      <option value="" disabled selected>Month</option>
+      <option *ngFor="let item of months">{{item}}</option>
+    </select>
+    <select class="form-control" [(ngModel)]="network.startYear">
+      <option value="" disabled selected>Year</option>
+      <option *ngFor="let item of years">{{item}}</option>
+    </select>
+  </p>
+  <p *ngIf="status == 1">
+    <label for="end">To</label>
+    <select class="form-control" [(ngModel)]="network.endMonth">
+      <option value="" disabled selected>Month</option>
+      <option *ngFor="let item of months; trackBy:index;">{{item}}</option>
+    </select>
+    <select class="form-control" [(ngModel)]="network.endYear">
+      <option value="" disabled selected>Year</option>
+      <option *ngFor="let item of years">{{item}}</option>
+    </select>
+  </p>
+
+  <button class="btn btn-primary btn-lg form-cta"> <i class="material-icons">send</i> <span>Send Request</span></button>
+
+  <div class="clearfix"></div>
 </form>

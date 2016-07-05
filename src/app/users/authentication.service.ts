@@ -20,7 +20,7 @@ export class AuthenticationService {
     return this.http
       .post(this.signInUrl, JSON.stringify(login), { headers: this.headers })
       .toPromise()
-      .then(response => response.json().token)
+      .then(response => response.json())
       .catch(this.handleError);
   }
 
@@ -28,9 +28,19 @@ export class AuthenticationService {
     return this.http
       .post(this.signUpUrl, JSON.stringify(user), { headers: this.headers })
       .toPromise()
-      .then(response => response.json().token)
+      .then(response => response.json())
       .catch(this.handleError);
   }
+
+  // upload(file: File): Promise<JSON> {
+  //   headers = new Headers({ 'Content-Type': 'multipart/form-data' });
+  //
+  //   return this.http
+  //     .post(this.signUpUrl, JSON.stringify(user), { headers: this.headers })
+  //     .toPromise()
+  //     .then(response => response.json().token)
+  //     .catch(this.handleError);
+  // }
 
   private handleError(error: any) {
     console.error('An error occurred', error);

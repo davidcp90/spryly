@@ -22,16 +22,18 @@ export class UserSignUpComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService) { };
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   signUp() {
     this.authenticationService.signUp(this.user)
-      .then(token => this.storeToken(token))
+      .then(auth => this.storeInfo(auth))
       .catch(error => this.error = error);
-    }
+  }
 
-    private storeToken(token) {
-      this.token = token;
-      localStorage.setItem("token", token);
-    }
+  private storeInfo(auth) {
+    this.token = auth.token;
+    localStorage.setItem("token", auth.token);
+    localStorage.setItem("id", auth.id);
+    // this.authenticationService.upload();
+  }
 }
