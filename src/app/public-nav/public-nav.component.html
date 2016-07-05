@@ -2,9 +2,9 @@
   <div class="container-fluid container-nav">
       <a class="navbar-brand" href="#"><img class="logo" src="./img/logo.png" alt="Spryly"></a>
     <ul class="nav navbar-nav navbar-right">
-      <li><a class="white" href="javascript:void(0);" onclick= "document.getElementById('show-login').click();">Login</a></li>
+      <li><a class="white" [routerLink]="['/users/signin']">Login</a></li>
       <li class="hidden-xs"><a class="white no-pad" href="javascript:void(0);">|</a></li>
-      <li class="hidden-xs"><a class="white" href="">Signup</a></li>
+      <li class="hidden-xs"><a class="white" [routerLink]="['/users/signup']">Signup</a></li>
     </ul>
   </div>
 </nav>

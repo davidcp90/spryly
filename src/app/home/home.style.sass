@@ -1,6 +1,6 @@
 .form-group
   width: 70%
-  margin: 100px auto 20px auto
+  margin: 100px 0 20px 0
   &.no-center
     margin: 40px 0 40px 0
     .form-control
@@ -32,13 +32,15 @@
   background-size: cover
   background-attachment: fixed
   color: white
-  height: 700px
+  height: 600px
   padding-top: 0
   margin-bottom: 0
   .wrapper
     padding: 115px 120px 25px 120px
+    background: url('img/map.png') right 50px bottom no-repeat
     @media screen and (max-width: 768px)
       padding: 115px 30px 25px 30px
+      background: transparent
   h1
     font-size: 60px
     font-weight: 700
@@ -72,37 +74,65 @@
     margin: 0 auto 20px auto
   h3
     margin-top: 50px
+    @media screen and (max-width: 768px)
+      text-align: center
   p
     font-weight: 400
     font-size: 14px
+    @media screen and (max-width: 768px)
+      text-align: center
 #the-app
   margin: 0
   background: url('img/peoplewalk.jpeg') no-repeat
   background-size: cover
   height: 400px
+  @media screen and (max-width: 768px)
+    height: 600px
   .wrapper
     padding: 50px 120px
     @media screen and (max-width: 768px)
       padding: 25px
+      text-align: center
   p
     font-weight: 400
-    font-size: 14px
+    font-size: 16px
   .phone
     display: block
     position: absolute
+    right: 0
     height: 586px
     width: 321px
-    background: url('img/mobile_mockup.png') no-repeat !important
+    background: url('img/mobile_mockup.png') no-repeat 
     background-size: cover
     top: -190px
+    @media screen and (max-width: 992px)
+      width: 200px
+      height: 365px
+      top: -130px
+      background: url('img/mobile_mockup_mini.png') no-repeat center top
+    @media screen and (max-width: 768px)
+      position: relative
+      top: 0
+      margin: 0 auto
+      width: 200px
+      height: 365px
+      background: url('img/mobile_mockup_mini.png') no-repeat center top
 #cta-final
   margin: 0
-  padding-bottom: 50px
+  padding-bottom: 25px
   background: white
   .wrapper
-    padding: 50px 120px
+    padding: 50px 120px 5px 120px
     @media screen and (max-width: 768px)
-      padding: 25px
+      padding-top: 30px
+    @media screen and (max-width: 768px)
+      padding: 25px 25px 5px 25px
+    .form-group
+      margin: 30px auto 50px auto
+    .logo-footer
+      text-align: left
+      float: left
+      margin-top: 60px
   h1
     font-size: 60px
     font-weight: 700
