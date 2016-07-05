@@ -8,7 +8,5 @@ export class RecReplyFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    
   }
 }
-  

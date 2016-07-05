@@ -9,35 +9,51 @@ import { Network } from './network';
 
 @Injectable()
 export class RecommendationService {
-  private headers = new Headers({ 'Content-Type': 'application/json', 'X-Auth-Token': localStorage.getItem('token') });
+    private headers = new Headers(
+        {
+	        'Content-Type': 'application/json',
+	        'X-Auth-Token': localStorage.getItem('token')
+        }
+    );
+    private recommendationsUrl = sprGlobals.endpoint + '/typenetworks/';
 
-  private recommendationsUrl = sprGlobals.endpoint + '/typenetworks/';
+    constructor(private http: Http) { }
 
-  constructor(private http: Http) { }
+    getRecommendations(): Promise<Recommendation[]> {
+        let url = sprGlobals.endpoint + '/typenetworks/' + localStorage.getItem('id');
+        
 
-  getRecommendations(): Promise<JSON> {
-    return this.http
-      .get(this.recommendationsUrl, { headers: this.headers })
-      .toPromise()
-      .then(response => response.json())
-      .catch(this.handleError);
-  }
+        return this.http
+            .get(url, { headers: this.headers })
+            .toPromise()
+            .then(response => {
+                let recommendations: Recommendation[] = [];
+	            var data = response.json();
 
-  request(network: Network): Promise<JSON> {
-    return this.http
-      .post(this.recommendationsUrl, JSON.stringify(network), { headers: this.headers })
-      .toPromise()
-      .then(response => this.handleSuccess(response))
-      .catch(this.handleError);
-  }
+                for(var row of data){
+                    let r = new Recommendation();
+                    
+                    recommendations.push(r);
+                }
+                return recommendations;
+            })
+            .catch(this.handleError);
+    }
 
-  private handleSuccess(response) {
-    return response.json().data;
-  }
+    request(network: Network): Promise<JSON> {
+        return this.http
+            .post(this.recommendationsUrl, JSON.stringify(network), { headers: this.headers })
+            .toPromise()
+        .then(response => this.handleSuccess(response))
+        .catch(this.handleError);
+    }
 
-  private handleError(error: any) {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
-  }
+    private handleSuccess(response) {
+        return response.json();
+    }
 
+    private handleError(error: any) {
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
+    }
 }

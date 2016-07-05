@@ -9,7 +9,6 @@ export class RecReplyLandingComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    
+
   }
 }
-  
