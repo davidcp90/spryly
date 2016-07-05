@@ -12,7 +12,7 @@ export class RecommendationService {
 
     constructor(private http: Http) { }
 
-    getRecommendations(): Promise<string> {
+    getRecommendations(): Promise<JSON> {
         let url = this.recommendationsURL
         
         return this.http
