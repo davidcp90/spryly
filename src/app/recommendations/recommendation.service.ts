@@ -6,16 +6,19 @@ import { Recommendation } from './recommendation';
 
 @Injectable()
 export class RecommendationService {
-    private endpoint = sprGlobals.endpoint;
+    private headers = new Headers({ 'Content-Type': 'application/json' });
+
+    private recommendationsURL = sprGlobals.endpoint + '/typenetworks/';
 
     constructor(private http: Http) { }
 
-    post(rec: Recommendation): Promise<string> {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
+    getRecommendations(): Promise<string> {
+        let url = this.recommendationsURL
+        
         return this.http
-            .post(this.endpoint , JSON.stringify(rec), { headers: headers })
+            .get(url, { headers: this.headers })
             .toPromise()
-            .then(response => response.json().data)
+            .then(response => response.json())
             .catch(this.handleError);
     }
 

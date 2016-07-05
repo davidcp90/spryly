@@ -1,14 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { RecommendationService } from '../recommendation.service';
 import { RecDetailComponent } from '../rec-detail';
+import { Recommendation } from '../recommendation';
+
 @Component({
   selector: 'spr-rec-list',
   template: require('./rec-list.component.html'),
-  directives: [RecDetailComponent]
+  directives: [RecDetailComponent],
+  providers: [RecommendationService]
 })
 
 export class RecListComponent implements OnInit {
-  constructor() { }
+  recommendations: Recommendation[];
 
-  ngOnInit() { }
-
+  constructor(private _recommendationService: RecommendationService) {
+  }
+  
+  getRecommendations() {
+    this._recommendationService.getRecommendations().then(recommendations => this.recommendations = recommendations);
+  }
+  
+  ngOnInit(){
+    this.getRecommendations();  
+  }
 }
