@@ -17,7 +17,11 @@ export class RecListComponent implements OnInit {
   }
   
   getRecommendations() {
-    this._recommendationService.getRecommendations().then(recommendations => this.recommendations = recommendations);
+    this._recommendationService.getRecommendations()
+      .then(recommendations =>
+        console.log(recommendations) 
+        //this.recommendations = recommendations
+      );
   }
   
   ngOnInit(){
