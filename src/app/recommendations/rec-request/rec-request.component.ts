@@ -17,10 +17,11 @@ export class RecRequestComponent implements OnInit {
   network: Network = {
     source: parseInt(localStorage.getItem('id')),
     sourceRole: '',
+    sourceOrganization: '',
     targetEmail: '',
     targetName: '',
     targetRole: '',
-    organization: '',
+    targetOrganization: '',
     startMonth: '',
     startYear: '',
     endMonth: '',

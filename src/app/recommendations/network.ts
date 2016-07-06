@@ -1,10 +1,11 @@
 export class Network {
   source: number;
   sourceRole: string;
+  sourceOrganization: string;
   targetEmail: string;
   targetName: string;
   targetRole: string;
-  organization: string;
+  targetOrganization: string;
   startMonth: string;
   startYear: string;
   endMonth: string;
