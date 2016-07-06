@@ -58,7 +58,7 @@ export const DashboardRoutes: RouterConfig = [
   ]
 },
 {
-  path: 'recommendation',
+  path: 'connections/:id',
   component: RecReplyLandingComponent
 },
 {

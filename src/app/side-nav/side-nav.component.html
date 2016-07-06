@@ -8,7 +8,7 @@
       <div class="profile-names">
         <h3 class="name">Ebenezer Doe</h3>
         <h5 class="role">ENIAC Developer</h5>
-        <div class="stats">
+        <div class="stats" style="display: none">
           <span class="stat">
             <img class="img-icon recommendations" src="/img/badge.png" alt=""> 14
           </span>
@@ -20,12 +20,12 @@
     </div>
     <div class="clearfix"></div>
     <div class="links-xs">
-    <a [routerLink]="['/dashboard/recommendations']" class="btn btn-link btn-full btn-lg">Recommendations</a>
+    <a [routerLink]="['/dashboard/recommendations']" class="btn btn-link btn-full btn-lg">Connections</a>
       <a [routerLink]="['/dashboard/network']" class="btn btn-link btn-full btn-lg">Your Network</a>
       <a href="" class="btn btn-link btn-full btn-lg"><img class="img-icon" src="/img/logout.png" alt=""> Log Out</a>
     </div>
     <div class="section-cta">
-      <a [routerLink]="['/dashboard/recommendations/new']" class="btn btn-primary  btn-lg"><i class="material-icons">add_circle_outline</i> <span>Request Recommendation</span></a>
+      <a [routerLink]="['/dashboard/recommendations/new']" class="btn btn-primary  btn-lg"><i class="material-icons">add_circle_outline</i> <span>Create new connection</span></a>
       </div>
     <div class="logout">
       <a href="" class="btn btn-link btn-full btn-lg mt-10"><i class="material-icons">exit_to_app</i> <span>Log Out</span></a>

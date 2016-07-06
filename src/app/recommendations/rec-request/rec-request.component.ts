@@ -57,7 +57,7 @@ export class RecRequestComponent implements OnInit {
 
   ngOnInit() {
     var count = 0;
-
+     console.log(this.network.source);
     while (count < 100)
       this.years.push(2016 - count++);
   }

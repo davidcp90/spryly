@@ -42,6 +42,8 @@ h6
   font-weight: 500
   cursor: pointer
   padding: 13px 15px
+  &:focus
+    outline: 0
   &.btn-full
     width: 100% !important
   &.btn-primary
@@ -78,7 +80,7 @@ h6
     position: relative
     top: -7px
 
-// Dashborad main
+// Dashboard main ==============================================
 spr-dashboard
   max-width: 100%
   overflow-x: hidden
@@ -379,18 +381,17 @@ hr
     border-radius: 2px !important
     padding: 16.5px 12px
     box-shadow: none !important
-    &.inline-input
-      border-radius: 0 !important
-      border: none !important
-      border-bottom: 1px solid #DEDEDE !important
-      &::-webkit-input-placeholder
-        color: $primary !important
-      &:-moz-placeholder
-        color: $primary !important
-      &::-moz-placeholder
-        color: $primary !important
-      &:-ms-input-placeholder
-        color: $primary !important
+  .inline-input
+    border-radius: 0 !important
+    border: none !important
+    border-bottom: 1px solid #DEDEDE !important
+    padding: 0 12px 2.5px 12px
+    margin: 0 12px
+    text-align: center
+    &:focus
+      border: 0
+      box-shadow: 0
+      outline: 0
   .file-control
     width: 100%
     background: $page-bg

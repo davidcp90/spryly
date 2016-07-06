@@ -6,7 +6,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 import {AppComponent} from './app/app.component';
-
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 const ENV_PROVIDERS = [];
 // depending on the env mode, enable prod mode or add debugging modules

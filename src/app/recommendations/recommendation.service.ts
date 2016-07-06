@@ -60,6 +60,20 @@ export class RecommendationService {
         .catch(this.handleError);
     }
 
+
+    getRecommendationById(id: String): Promise<Network>{
+        let url = sprGlobals.endpoint + '/typenetworks/all/' + id;       
+        return this.http
+            .get(url, { headers: this.headers })
+            .toPromise()
+            .then(response =>{
+                    let n = new Network();
+                    n=response.json();
+                    return n || { };            
+             })
+            .catch(this.handleError);
+    }
+
     private handleSuccess(response) {
         return response.json();
     }

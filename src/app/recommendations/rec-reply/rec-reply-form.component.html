@@ -1,16 +1,9 @@
 <form class="spryly-form recommendation">
   <div class="form-group">
-  <div class="alert alert-dismissible alert-danger">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Error</strong> and try submitting again.
-</div>
     <p class="inline-form">
-      
+      You <input type="text" class="inline-input" placeholder="relation type"><br/><br/> while you are <input type="text" class="inline-input" placeholder=" your role name"><br/><br/> and he/she is <input type="text" class="inline-input" placeholder="contact role name"><br/><br/> at <input type="text" class="inline-input" placeholder="organization name"><br/><br/>
     </p>
   </div>
-  <div class="pull-right mt-20">
-    <a href="" class="btn btn-link">Privacy</a>
-    <button class="btn btn-primary" (click)="submitted=true">Submit Recommendation</button>
-  </div>
+  <button class="center-block mt-20 btn btn-primary" (click)="submitted=true">Confirm relationship</button>
   <div class="clearfix"></div>
 </form>

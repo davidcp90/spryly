@@ -1,8 +1,8 @@
-<h1 class="dashboard-title"><i class="material-icons">add_circle_outline</i> Request recommendation</h1>
+<h1 class="dashboard-title"><i class="material-icons">add_circle_outline</i>Create new connection</h1>
 
 <form class="spryly-form" (ngSubmit)="request()">
   <div class="form-group">
-    <label for="status">What is the current status of the relationship?</label>
+    <label for="status">What is the current status of the connection?</label>
     <div class="radio">
       <label for="present">
         <input id="present" type="radio" name="status" (click)="status = '0'" [checked]="status == 0" />
@@ -18,7 +18,7 @@
     <div class="clearfix"></div>
   </div>
   <div class="form-group">
-    <label for="relation">What type of relationship do you have?</label>
+    <label for="relation">What type of connection do you have?</label>
     <select class="form-control" placeholder="Relation type">
       <option value="" disabled selected>Select one</option>
       <option value="">Employee</option>
@@ -51,6 +51,7 @@
       <option value="" disabled selected>Month</option>
       <option *ngFor="let item of months">{{item}}</option>
     </select>
+    <br>
     <select class="form-control" [(ngModel)]="network.startYear">
       <option value="" disabled selected>Year</option>
       <option *ngFor="let item of years">{{item}}</option>
@@ -62,6 +63,7 @@
       <option value="" disabled selected>Month</option>
       <option *ngFor="let item of months; trackBy:index;">{{item}}</option>
     </select>
+    <br>
     <select class="form-control" [(ngModel)]="network.endYear">
       <option value="" disabled selected>Year</option>
       <option *ngFor="let item of years">{{item}}</option>
