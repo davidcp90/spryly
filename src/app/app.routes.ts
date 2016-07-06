@@ -8,7 +8,8 @@ import {
   RecReplyComponent,
   RecReplyLandingComponent,
   RecRequestComponent,
-  RecShareComponent
+  RecShareComponent,
+  RecThanksComponent
 } from './recommendations';
 import {
   ConversationDetailComponent,
@@ -60,6 +61,10 @@ export const DashboardRoutes: RouterConfig = [
 {
   path: 'connections/:id',
   component: RecReplyLandingComponent
+},
+{
+  path: 'thanks/:benefits',
+  component: RecThanksComponent
 },
 {
   path: 'users',

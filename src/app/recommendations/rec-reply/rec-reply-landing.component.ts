@@ -38,6 +38,7 @@ export class RecReplyLandingComponent implements OnInit, OnDestroy {
     this.form.unsubscribe();
   }
   verifyIdentity(){
+    console.log(this.hasToken);
     if(this.hasToken){
       this.hideform=true;
       this.thanks=true;

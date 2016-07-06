@@ -24,8 +24,11 @@
     </label>
   </div>
 
-  <div class="pull-right mt-20">
+  <div class="pull-right mt-20" *ngIf="!landing">
     <button class="btn btn-primary">Sign In</button>
+  </div>
+  <div class="pull-right mt-20" *ngIf="landing">
+    <a href="#/thanks/user" class="btn btn-primary">Sign In</a>
   </div>
 
   <div class="clearfix"></div>
