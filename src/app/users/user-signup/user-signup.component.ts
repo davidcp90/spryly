@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
 import { User } from '../user';
 import { AuthenticationService } from '../authentication.service';
@@ -10,6 +10,7 @@ import { AuthenticationService } from '../authentication.service';
   providers: [AuthenticationService]
 })
 export class UserSignUpComponent implements OnInit {
+  @Input() landing: boolean;
   error: string;
   token: string = '';
   user: User = {
