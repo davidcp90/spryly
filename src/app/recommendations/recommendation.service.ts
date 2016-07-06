@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { Recommendation } from './recommendation';
 import { Network } from './network';
+import { Message } from './message';
 
 @Injectable()
 export class RecommendationService {
@@ -21,7 +22,7 @@ export class RecommendationService {
 
     getRecommendations(): Promise<Recommendation[]> {
         let url = sprGlobals.endpoint + '/typenetworks/' + localStorage.getItem('id');
-        
+
 
         return this.http
             .get(url, { headers: this.headers })
@@ -32,7 +33,7 @@ export class RecommendationService {
 
                 for(var row of data){
                     let r = new Recommendation();
-                    
+
                     recommendations.push(r);
                 }
                 return recommendations;
@@ -45,6 +46,16 @@ export class RecommendationService {
             .post(this.recommendationsUrl, JSON.stringify(network), { headers: this.headers })
             .toPromise()
         .then(response => this.handleSuccess(response))
+        .catch(this.handleError);
+    }
+
+    sendMessage(message: Message, id: number): Promise<JSON> {
+      let sendMessageUrl = sprGlobals.endpoint + '/typenetworks/' + id + '/notify';
+
+      return this.http
+        .post(this.rsendMessageUrl, JSON.stringify(message), { headers: this.headers })
+        .toPromise()
+        .then()
         .catch(this.handleError);
     }
 

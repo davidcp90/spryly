@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
+import { Router } from '@angular/router';
 import { Network } from '../network';
 import { RecommendationService } from '../recommendation.service';
 
@@ -52,7 +53,7 @@ export class RecRequestComponent implements OnInit {
     '12' ];
   years = [];
 
-  constructor(private recommendationService: RecommendationService) { }
+  constructor(private recommendationService: RecommendationService, private router: Router) { }
 
   ngOnInit() {
     var count = 0;
@@ -63,7 +64,11 @@ export class RecRequestComponent implements OnInit {
 
   request() {
     this.recommendationService.request(this.network)
-      .then()
+      .then(response => this.gotoShare(response))
       .catch(error => this.error = error);
+  }
+
+  gotoShare(response) {
+    this.router.navigate(['/dashboard/recommendations/share/', response.id]);
   }
 }

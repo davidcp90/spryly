@@ -7,7 +7,8 @@ import {
   RecListComponent,
   RecReplyComponent,
   RecReplyLandingComponent,
-  RecRequestComponent
+  RecRequestComponent,
+  RecShareComponent
 } from './recommendations';
 import {
   ConversationDetailComponent,
@@ -48,6 +49,7 @@ export const DashboardRoutes: RouterConfig = [
   { path: 'network/add', component: ContactAddComponent },
   { path: 'recommendations', component: RecListComponent },
   { path: 'recommendations/new', component: RecRequestComponent },
+  { path: 'recommendations/share/:id', component: RecShareComponent },
   { path: 'recommendations/view', component: RecDetailComponent },
   { path: 'recommendations/reply', component: RecReplyComponent },
   { path: 'conversations', component: ConversationListComponent },

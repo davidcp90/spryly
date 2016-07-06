@@ -1,0 +1,21 @@
+<h1 class="dashboard-title"><i class="material-icons">add_circle_outline</i> Share request</h1>
+
+<h3>You can send an email to share your request to your contact</h3>
+
+<form class="spryly-form" (ngSubmit)="sendMessage()">
+  <div class="form-group">
+    <label for="contact">Subject</label>
+    <input class="form-control" type="text" placeholder="Ex. Your share subject" [(ngModel)]="message.subject">
+  </div>
+  <div class="form-group">
+    <label for="contact">Message</label>
+    <textarea class="form-control" rows="5" [(ngModel)]="message.message"></textarea>
+  </div>
+
+  <button class="btn btn-primary btn-lg form-cta"> <i class="material-icons">send</i> <span>Send Request</span></button>
+
+  <div class="clearfix"></div>
+</form>
+
+<h3>Or you can share this link:</h3>
+<h4><a href="spryly.co/recommendations/reply/{{message.typeNetworkId}}">spryly.co/recommendations/reply/{{message.typeNetworkId}}</a></h4>
