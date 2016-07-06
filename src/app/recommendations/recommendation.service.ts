@@ -53,7 +53,8 @@ export class RecommendationService {
       let sendMessageUrl = sprGlobals.endpoint + '/typenetworks/' + message.typeNetworkId + '/notify';
 
       return this.http
-        .post(sendMessageUrl, JSON.stringify(message), { headers: this.headers })
+        .get(sendMessageUrl, { headers: this.headers })
+        //.post(sendMessageUrl, JSON.stringify(message), { headers: this.headers })
         .toPromise()
         .then()
         .catch(this.handleError);
