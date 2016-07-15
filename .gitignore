@@ -4,3 +4,4 @@ typings/
 bower_components/
 npm-debug.log
 .DS_Store
+emails/node_modules

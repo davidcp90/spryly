@@ -1,0 +1,68 @@
+@import 'settings';
+@import 'foundation-emails';
+
+body{
+	font:{
+		family: Heebo-Medium, Helvetica, Arial, sans-serif;
+		size: 11px;
+	}
+}
+
+h2.headline{
+	font: {
+		size: 24px;
+	}
+}
+
+h4.name{
+	color: #515151;
+	font: {
+		size: 14px;
+		weight: bold;
+	}
+	margin-bottom: 7px;
+}
+
+.bio{
+	color: #989898;
+	font: {
+		size: 14px;
+	}
+}
+
+.description{
+	color: #989898;
+	margin-left: 50px;
+	margin-right: 50px;
+	font: {
+		size: 18px;
+		weight: 300;
+	}
+}
+
+.bold{
+	font: {
+		weight: bold;
+	}
+}
+.footer{
+	font: {
+		size: 11px;
+	}
+	a {
+		color: inherit;
+		text-decoration: underline;
+	}
+
+}
+.light{
+	color: #989898;
+}
+
+button.verify{
+	height: 35px;
+	font:{
+		size: 24px;
+		weight: 500;
+	}
+}
