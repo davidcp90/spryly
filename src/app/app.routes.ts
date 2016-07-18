@@ -26,6 +26,13 @@ import {
   UserSignInComponent,
   UserSignUpComponent
 } from './users';
+import {
+  ExperienceComponent,
+  ExperienceAddComponent,
+  ExperienceVerifyComponent
+} from './experiences';
+
+
 export const DashboardRoutes: RouterConfig = [
 {
   path: '',
@@ -79,7 +86,22 @@ export const DashboardRoutes: RouterConfig = [
       component: UserSignUpComponent
     }
   ]
-}];
+},
+{
+  path: 'experiences',
+  component: ExperienceComponent,
+  children: [
+    {
+      path: 'add',
+      component: ExperienceAddComponent
+    },
+    {
+      path: 'verify/:key',
+      component: ExperienceVerifyComponent
+    }
+  ]
+}
+];
 export const APP_ROUTER_PROVIDERS = [
 provideRouter(DashboardRoutes)
 ];

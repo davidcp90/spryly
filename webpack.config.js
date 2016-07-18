@@ -97,7 +97,7 @@ module.exports = function makeWebpackConfig() {
             2502  // 2502 -> Referenced directly or indirectly
           ]
         },
-        exclude: [isTest ? /\.(e2e)\.ts$/ : /\.(spec|e2e)\.ts$/, /node_modules\/(?!(ng2-.+))/]
+        exclude: [/node_modules/, /node_modules\/(?!(ng2-.+))/]
       },
 
       // copy those assets to output

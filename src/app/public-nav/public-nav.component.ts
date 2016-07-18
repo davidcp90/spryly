@@ -8,15 +8,16 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 })
 export class PublicNavComponent implements OnInit {
   constructor() {}
+
   ngOnInit() {
   }
-  toggleSidenav(){
-    let sidenav=document.getElementById('sidenav');
-    if(!sidenav.className.match('show')){
-      sidenav.className += " show";
-    }
-    else{
-      sidenav.className=sidenav.className.replace("show","");
+
+  toggleSidenav() {
+    let sidenav = document.getElementById('sidenav');
+    if ( !sidenav.className.match('show') ) {
+      sidenav.className += ' show';
+    } else {
+      sidenav.className = sidenav.className.replace('show', '');
     }
   }
 }

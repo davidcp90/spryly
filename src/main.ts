@@ -22,6 +22,8 @@ bootstrap(AppComponent, [
     ...ROUTER_PROVIDERS,
     ...ENV_PROVIDERS,
     APP_ROUTER_PROVIDERS,
-    { provide: LocationStrategy, useClass: HashLocationStrategy } // use #/ routes, remove this for HTML5 mode
+    { provide: LocationStrategy, useClass: HashLocationStrategy }, // use #/ routes, remove this for HTML5 mode
+    disableDeprecatedForms(),
+    provideForms()
   ])
 .catch(err => console.error('error bootstraping' + err));

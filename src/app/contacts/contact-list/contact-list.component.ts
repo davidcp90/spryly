@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ContactsService} from '../contacts.service';
 import {ContactDetailComponent } from '../contact-detail';
 import { Contact } from '../contact';
+
 @Component({
   selector: 'spr-contact-list',
   template: require('./contact-list.component.html'),
@@ -9,18 +10,20 @@ import { Contact } from '../contact';
   providers: [ContactsService]
 })
 
-export class ContactListComponent implements OnInit{
+export class ContactListComponent implements OnInit {
   contacts: Contact[];
 
   constructor(private _contactsService: ContactsService) {
   }
-  
+
   getContacts() {
     this._contactsService.getContacts()
-      .then(contacts => this.contacts = contacts);
+      .then(contacts => {
+        this.contacts = contacts;
+      });
   }
-  
-  ngOnInit(){
-    this.getContacts();  
+
+  ngOnInit() {
+    this.getContacts();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; // OnDestroy
 import { CORE_DIRECTIVES } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Message } from '../message';
@@ -17,10 +17,13 @@ export class RecShareComponent implements OnInit {
   message: Message = {
     typeNetworkId: 1,
     subject: 'I want to strengthen my network and need your help!',
-    message: 'Hi, I need you to confirm our relationship to strengthen my network using Spryly. Please confirm it by clicking on this link: spryly.co/recommendations/reply/'
+    message: 'Hi, I need you to confirm our relationship to strengthen ' +
+      'my network using Spryly. Please confirm it by clicking on this ' +
+      'link: spryly.co/recommendations/reply/'
   };
 
-  constructor(private recommendationService: RecommendationService, private route: ActivatedRoute) { }
+  constructor(private recommendationService: RecommendationService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {

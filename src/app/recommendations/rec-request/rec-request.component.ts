@@ -15,7 +15,7 @@ export class RecRequestComponent implements OnInit {
   error: string;
   status: string = '0';
   network: Network = {
-    source: parseInt(localStorage.getItem('id')),
+    source: 0,
     sourceRole: '',
     sourceOrganization: '',
     targetEmail: '',
@@ -54,13 +54,19 @@ export class RecRequestComponent implements OnInit {
     '12' ];
   years = [];
 
-  constructor(private recommendationService: RecommendationService, private router: Router) { }
+  constructor(private recommendationService: RecommendationService,
+    private router: Router) {
+      let userId = Number(localStorage.getItem('id'));
+      this.network.source = userId ? userId : 0;
+    }
 
   ngOnInit() {
-    var count = 0;
-     console.log(this.network.source);
-    while (count < 100)
+    let count = 0;
+    console.log(this.network.source);
+
+    while (count < 100) {
       this.years.push(2016 - count++);
+    }
   }
 
   request() {

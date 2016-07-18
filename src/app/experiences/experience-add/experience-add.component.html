@@ -1,0 +1,43 @@
+<div class="row head-landing" *ngIf="!landing">
+  <div class="col-xs-8">
+    <h3 class="tx-24 text-primary">Create a free account</h3>
+    <p><span>Already have a Spryly account?</span> <a href="#/users/signin">Sign In</a></p>
+  </div>
+  <div class="col-xs-4">
+    <img class="logo-landing" src="img/logo-turq.png" alt="">
+  </div>
+</div>
+
+<hr/>
+
+<form class="spryly-form" (ngSubmit)="signUp()">
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input class="form-control" type="text" placeholder="Email" [(ngModel)]="user.email" />
+  </div>
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input class="form-control" type="text" placeholder="First Name" [(ngModel)]="user.firstName" />
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name:</label>
+    <input class="form-control" type="text" placeholder="Last Name" [(ngModel)]="user.lastName" />
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input class="form-control" type="password" placeholder="Password" [(ngModel)]="user.password" />
+  </div>
+  <div class="form-group">
+    <label for="picture">Picture:</label>
+    <input class="form-control" type="file" placeholder="Picture" [(ngModel)]="user.picture" />
+  </div>
+
+  <div class="pull-right mt-20" *ngIf="!landing">
+    <button class="btn btn-primary">Create account</button>
+  </div>
+  <div class="pull-right mt-20" *ngIf="landing">
+    <a href="#/thanks/new" class="btn btn-primary">Create account</a>
+  </div>
+
+  <div class="clearfix"></div>
+</form>

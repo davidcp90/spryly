@@ -15,13 +15,13 @@ export class RecListComponent implements OnInit {
 
   constructor(private _recommendationService: RecommendationService) {
   }
-  
+
   getRecommendations() {
     this._recommendationService.getRecommendations()
       .then(recommendations => this.recommendations = recommendations);
   }
-  
-  ngOnInit(){
-    this.getRecommendations();  
+
+  ngOnInit() {
+    this.getRecommendations();
   }
 }

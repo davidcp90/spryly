@@ -10,76 +10,98 @@ import { Message } from './message';
 
 @Injectable()
 export class RecommendationService {
-    private headers = new Headers(
-        {
-	        'Content-Type': 'application/json',
-	        'X-Auth-Token': localStorage.getItem('token')
+  private headers = new Headers({
+    'Content-Type': 'application/json',
+    'X-Auth-Token': localStorage.getItem('token')
+  });
+  private recommendationsUrl = sprGlobals.endpoint + '/typenetworks/';
+
+  constructor(private http: Http) { }
+
+  getRecommendations(): Promise<Recommendation[]> {
+
+    let url = sprGlobals.endpoint + '/typenetworks/' + localStorage.getItem('id');
+
+    return this.http
+      .get(url, { headers: this.headers })
+      .toPromise()
+      .then(response => {
+        let recommendations: Recommendation[];
+        let data = response.json();
+
+        for (let row of data) {
+          let r: Recommendation = {
+            id: row.id,
+            contact: row.number,
+            requester: row.number,
+            status: row.number,
+            type: row.number,
+            relation_type: row.number,
+            organization: row.number,
+            confirmed: row.number,
+            position: row.number,
+            contact_position: row.number
+          };
+
+          recommendations.push(r);
         }
-    );
-    private recommendationsUrl = sprGlobals.endpoint + '/typenetworks/';
+        return recommendations;
+      })
+      .catch(this.handleError);
+  }
 
-    constructor(private http: Http) { }
+  request(network: Network): Promise<JSON> {
+    return this.http
+      .post(this.recommendationsUrl, JSON.stringify(network), { headers: this.headers })
+      .toPromise()
+    .then(response => this.handleSuccess(response))
+    .catch(this.handleError);
+  }
 
-    getRecommendations(): Promise<Recommendation[]> {
-        let url = sprGlobals.endpoint + '/typenetworks/' + localStorage.getItem('id');
+  sendMessage(message: Message): Promise<JSON> {
+    let sendMessageUrl = sprGlobals.endpoint + '/typenetworks/' + message.typeNetworkId + '/notify';
 
+    return this.http
+    .get(sendMessageUrl, { headers: this.headers })
+    // .post(sendMessageUrl, JSON.stringify(message), { headers: this.headers })
+    .toPromise()
+    .then()
+    .catch(this.handleError);
+  }
 
-        return this.http
-            .get(url, { headers: this.headers })
-            .toPromise()
-            .then(response => {
-                let recommendations: Recommendation[] = [];
-	            var data = response.json();
+  getRecommendationById(id: String): Promise<Network> {
+    let url = sprGlobals.endpoint + '/typenetworks/all/' + id;
+    return this.http
+      .get(url, { headers: this.headers })
+      .toPromise()
+      .then(response => {
+        let r = response.json();
+        let n: Network = {
+          source: r.number,
+          sourceRole: r.number,
+          sourceOrganization: r.number,
+          targetEmail: r.number,
+          targetName: r.number,
+          targetRole: r.number,
+          targetOrganization: r.number,
+          startMonth: r.number,
+          startYear: r.number,
+          endMonth: r.number,
+          endYear: r.number,
+          comments: r.number
+        };
 
-                for(var row of data){
-                    let r = new Recommendation();
+        return n || { };
+    })
+    .catch(this.handleError);
+  }
 
-                    recommendations.push(r);
-                }
-                return recommendations;
-            })
-            .catch(this.handleError);
-    }
+  private handleSuccess(response) {
+    return response.json();
+  }
 
-    request(network: Network): Promise<JSON> {
-        return this.http
-            .post(this.recommendationsUrl, JSON.stringify(network), { headers: this.headers })
-            .toPromise()
-        .then(response => this.handleSuccess(response))
-        .catch(this.handleError);
-    }
-
-    sendMessage(message: Message): Promise<JSON> {
-      let sendMessageUrl = sprGlobals.endpoint + '/typenetworks/' + message.typeNetworkId + '/notify';
-
-      return this.http
-        .get(sendMessageUrl, { headers: this.headers })
-        //.post(sendMessageUrl, JSON.stringify(message), { headers: this.headers })
-        .toPromise()
-        .then()
-        .catch(this.handleError);
-    }
-
-
-    getRecommendationById(id: String): Promise<Network>{
-        let url = sprGlobals.endpoint + '/typenetworks/all/' + id;       
-        return this.http
-            .get(url, { headers: this.headers })
-            .toPromise()
-            .then(response =>{
-                    let n = new Network();
-                    n=response.json();
-                    return n || { };            
-             })
-            .catch(this.handleError);
-    }
-
-    private handleSuccess(response) {
-        return response.json();
-    }
-
-    private handleError(error: any) {
-        console.error('An error occurred', error);
-        return Promise.reject(error.message || error);
-    }
+  private handleError(error: any) {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
+  }
 }

@@ -11,13 +11,12 @@ export class RecThanksComponent implements OnInit {
       private router: Router) {}
 
   ngOnInit() {
-    this.form = this.route.params.subscribe(params=>{
+    this.form = this.route.params.subscribe( params => {
       let b = params['benefits'];
       console.log(b);
-      if(b='new'){
-        this.benefits=true;
+      if (b === 'new') {
+        this.benefits = true;
       }
     });
   }
 }
-  

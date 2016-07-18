@@ -9,6 +9,7 @@ import { AuthenticationService } from '../authentication.service';
   directives: [CORE_DIRECTIVES],
   providers: [AuthenticationService]
 })
+
 export class UserSignUpComponent implements OnInit {
   @Input() landing: boolean;
   error: string;
@@ -33,8 +34,8 @@ export class UserSignUpComponent implements OnInit {
 
   private storeInfo(auth) {
     this.token = auth.token;
-    localStorage.setItem("token", auth.token);
-    localStorage.setItem("id", auth.id);
+    localStorage.setItem('token', auth.token);
+    localStorage.setItem('id', auth.id);
     // this.authenticationService.upload();
   }
 }
