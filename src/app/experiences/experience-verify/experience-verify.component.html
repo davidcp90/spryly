@@ -1,32 +1,133 @@
-<div class="col-xs-12 col-lg-offset-2 col-sm-12 col-md-12 col-lg-8 padding-after-nav">
+<div *ngIf="experience">
+    <!--<pre>{{experience | json}}</pre>-->
     <div class="row">
-    <h1>{{experience?.sourceName}} </h1>
-<!--
-      <pre>{{experience | json}}</pre>
-      <h3>{{experience.sourceName}} would like to have an authentic profile.  Verify their professional and educational experience by clicking below.</h3>
-      <h2 class="text-center">Please verify:</h2>
-      <div class="col-xs-12 col-lg-offset-2 col-sm-5 col-md-5 col-lg-4">
-        <img [src]="experience.sourcePicture"/><br/>
-        <span>{{experience.sourceName}}</span><br/>
-        <span>{{experience.sourceRole}}</span><br/>
-        <span>{{experience.sourceOrganization}}</span><br/>
-      </div>
-      <div class="col-xs-12 col-lg-offset-2 col-sm-2 col-md-2 col-lg-2">
-      </div>
-      <div class="col-xs-12 col-lg-offset-2 col-sm-5 col-md-5 col-lg-4">
-        <span [(ngModel)]="experience.targetName"></span><br/>
-        <span [(ngModel)]="experience.targetRole"></span><br/>
-        <span [(ngModel)]="experience.targetOrganization"></span><br/>
+        <div class="col-lg-6 col-md-7 padding-40 padding-top-30">
+            <p class="tx-22 tx-gray text-center padding-top-60"><strong>{{experience?.source?.name}}</strong> would like to have an authentic profile.  Verify their professional and educational experience by clicking below.</p>
+            <p class="tx-28 tx-gray tx-med text-center" style="margin-top: 20px">Please verify:</p>
+            <div class="clearfix" style="height: 20px"></div>
+            <form class="form-group width-80 center-block">
+                <div class="flex-container flex-space">
+                    <div class="flex-container flex-vertical flex-30 text-center">
+                        <img [src]="experience?.source?.picture" class="img-contact img-circle"/><br/>
+                        <span>{{experience?.source?.name}}</span>
+                        <div class="clearfix" style="height: 10px"></div>
+                        <span>{{experience?.source?.role}}</span>
+                        <div class="clearfix" style="height: 10px"></div>
+                        <span>{{experience?.source?.organization}}</span>
+                    </div>
+                    <div class="flex-container flex-vertical flex-30">
+                        <div class="clearfix" style="height: 20px"></div>
+                        <img src="/img/corelation-vertical.png" class="center-block hidden-sm hidden-md hidden-lg"/>
+                        <select [(ngModel)]="experience.target.relationship" name="relationship" class="inline-input center-block" style="min-width: 150px; margin: 0 auto;"> <!-- autocomplete -->
+                            <option *ngFor="let item of relationships" [value]="item">{{item}}</option>
+                        </select>
+                        <img src="/img/corelation.png" width="130px" class="hidden-xs center-block" style="padding-top: 20px"/>
+                    </div>
+                    <div class="flex-container flex-vertical flex-30 text-center">
+                        <div class="image-upload" *ngIf="!experience.target.picture">
+                            <label for="file-input">
+                                <img src="/img/change-photo.png" width="155px" class="img-contact img-circle center-block" />
+                            </label>
+                            <input id="file-input" type="file" ng2FileSelect [uploader]="uploader" class="hide"/>
+                        </div>
+                        <img [src]="experience?.target?.picture" class="img-contact img-circle center-block" *ngIf="experience.target.picture"/>
+                        <div class="clearfix" style="height: 10px"></div>
+                        <input [(ngModel)]="experience.target.name" name="targetName" class="inline-input"/>
+                        <div class="clearfix" style="height: 10px"></div>
+                        <input [(ngModel)]="experience.target.role" name="targetRole" class="inline-input"/>
+                        <div class="clearfix" style="height: 10px"></div>
+                        <input [(ngModel)]="experience.target.organization" name="targetOrganization" class="inline-input"/>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="flex-container flex-space">
+                    <div class="flex-container text-center padding-top-50">
+                        <select [(ngModel)]="experience.startMonth" name="startMonth" class="inline-input">
+                            <option *ngFor="let m of months" [value]="m.value">{{m.label}}</option>
+                        </select>
+                        <select [(ngModel)]="experience.startYear" name="startYear" class="inline-input" >
+                            <option *ngFor="let y of years" [value]="y">{{y}}</option>
+                        </select>
+                    </div>
+                    <div class="flex-container text-center padding-top-50">
+                        <select [(ngModel)]="experience.endMonth" name="endMonth" class="inline-input">
+                            <option *ngFor="let m of months" [value]="m.value">{{m.label}}</option>
+                        </select>
+                        <select [(ngModel)]="experience.endYear" name="endYear" class="inline-input">
+                            <option *ngFor="let y of years" [value]="y">{{y}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="flex-container flex-space padding-top-30">
+                     <div class="flex-container flex-vertical text-center center-block">
+                        <button class="btn btn-primary">Verify</button>
+                        <div class="clearfix" style="height: 5px"></div>
+                        <span class="tx-11 tx-gray padding-top-20">By clicking here your are accepting our <a class="tx-11 tx-gray underline" (click)="termsOfUseModal.show()">terms of use</a></span>
+                        <div class="clearfix" style="height: 15px"></div>
+                        <a class="tx-14 tx-danger underline" (click)="notTrueModal.show()">This is not true!</a>
+                        <div class="clearfix" style="height: 15px"></div>
+                        <a class="tx-14 tx-info underline" [tooltip]="whatIfTooltip">What if I don't verify this experience</a>
+                     </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6 col-md-5 benefits padding-top-30 flex-container flex-space">
+            <div class="center-block padding-top-40">
+                <carousel [interval]="5000" [noWrap]="false">
+                    <slide *ngFor="let slide of slides; let index=index"
+                            [active]="slide.active">
+                        <h4 class="tx-28 tx-med tx-wh">{{slide.title}}</h4>
+                        <div style="height: 30px;"></div>
+                        <img [src]="slide.image" style="margin:auto;" width="300px">
+                        <p class="tx-20 tx-normal tx-wh slide-description text-center">{{slide.description}}</p>
+                        <div class="carousel-caption" style="margin-top: 20px;"></div>
+                    </slide>
+                </carousel>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #notTrueModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" (click)="notTrueModal.hide()" aria-label="Close">
+            <span aria-hidden="true" class="tx-light">X</span>
+        </button>
+        <h3 class="tx-primary text-center tx-24 margin-top-40">This is not true</h3>
+        <p class="text-center padding-30 tx-13 tx-med">
+            If some of the details provided are not accurate, you can change them before verifying professional or educational experiences.
+            You can also contact the requester and ask for the details to be changed before you verify. If this experience never happened,
+            or or you do not know the requester, we will block this person from sending you further requests.
+        </p>
+        <div class="flex-container flex-space">
+            <div class="flex-container flex-vertical flex-50 text-center">
+                <a class="tx-primary tx-under" (click)="notTrueModal.hide()">Go back</a>
+            </div>
+            <div class="flex-container flex-vertical flex-50 text-center">
+                <button type="button" class="btn btn-primary tx-12" (click)="blockRequester(); termsOfUseModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">Block requester</span>
+                </button>
+            </div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-lg-offset-2 col-sm-6 col-md-6 col-lg-4">
-          <input [(ngModel)]="experience.startYear" class="pull-right">
-          <input [(ngModel)]="experience.startMonth" class="pull-right">
+  </div>
+</div>
+
+<div bsModal #termsOfUseModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="termsOfUseModal.hide()" aria-label="Close">
+          <span aria-hidden="true" class="tx-light">X</span>
+        </button>
       </div>
-      <div class="col-xs-12 col-lg-offset-2 col-sm-6 col-md-6 col-lg-4">
-          <input [(ngModel)]="experience.endYear" class="pull-left">
-          <input [(ngModel)]="experience.endMonth" class="pull-left">
+      <div class="modal-body">
+          <spr-terms></spr-terms>
       </div>
-    </div>-->
+    </div>
+  </div>
 </div>

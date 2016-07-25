@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
 import { SHARES } from './experience-share/mock-shareInfo';
 // Statics
@@ -14,7 +14,7 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/toPromise';
 
 import sprGlobals = require('../globals');
-import { Experience } from './experience';
+import { Experience, PersonExperience } from './experience';
 
 @Injectable()
 export class ExperienceService {
@@ -41,10 +41,7 @@ export class ExperienceService {
 
     return this.http
       .get(url, { headers: this.headers })
-      .map(response => {
-        let data = response.json();
-        return this.prepareExperience(data);
-      })
+      .map(this.prepareExperience)
       .catch(this.handleError);
   }
 
@@ -53,10 +50,7 @@ export class ExperienceService {
 
     return this.http
       .post(url, JSON.stringify(experience), { headers: this.headers })
-      .map(response => {
-        let data = response.json();
-        return this.prepareExperience(data);
-      })
+      .map(this.prepareExperience)
       .catch(this.handleError);
   }
 
@@ -66,26 +60,42 @@ export class ExperienceService {
     return Observable.throw(errMsg);
   }
 
-  private prepareExperience(json: JSON): Experience {
-    let experience: Experience = {
-      source: json['interaction'].connection.source.id,
-      sourceName: json['interaction'].connection.source.name,
-      sourcePicture: json['interaction'].connection.source.picture,
-      sourceRole: json['sourceRole'],
-      sourceOrganization: json['sourceOrganization'],
-      targetEmail: json['interaction'].connection.target.email,
-      targetName: json['interaction'].connection.target.name,
-      targetPicture: json['interaction'].connection.target.picture,
-      targetRole: json['targetRole'],
-      targetOrganization: json['targeOrganization'],
-      startMonth: json['start'].substring(5, 7),
-      startYear: json['start'].substring(0, 4),
-      endMonth: json['end'] ? json['end'].substring(5, 7) : '',
-      endYear: json['end'] ? json['end'].substring(0, 4) : '',
-      comments: json['comments']
+  private prepareExperience(res: Response): Experience {
+    let json = res.json();
+
+    let source: PersonExperience = {
+        id: json['source'].id,
+        name: json['source'].name,
+        picture: json['source'].picture,
+        email: json['source'].email,
+        role: json['source'].role,
+        organization: json['source'].organization,
+        relationship: '',
     };
+
+    let target: PersonExperience = {
+       id: json['target'].id,
+        name: json['target'].name,
+        picture: json['target'].picture,
+        email: json['target'].email,
+        role: json['target'].role,
+        organization: json['target'].organization,
+        relationship: '',
+    };
+
+    let experience: Experience = {
+      id: 'id' in json ? json['id'] : '',
+      source: source,
+      target: target,
+      startMonth: json['startMonth'],
+      startYear:  json['startYear'],
+      endMonth: json['endMonth'] ? json['endMonth'] : '',
+      endYear: json['endYear'] ? json['endYear'] : ''
+    };
+
     return experience;
   }
+
   getShares() {
     return Promise.resolve(SHARES);
   }

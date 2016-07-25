@@ -373,13 +373,16 @@ hr
     border-radius: 2px !important
     padding: 16.5px 12px
     box-shadow: none !important
-  .inline-input
+  .inline-input, select.inline-input
+    -webkit-appearance: none
+    -webkit-border-radius: 0px
     border-radius: 0 !important
     border: none !important
     border-bottom: 1px solid #DEDEDE !important
     padding: 0 12px 2.5px 12px
     margin: 0 12px
     text-align: center
+    background: transparent
     &:focus
       border: 0
       box-shadow: 0
@@ -555,6 +558,157 @@ hr
   &.alert-info
     background-color: $info
 
+.carousel-control.left, .carousel-control.right
+   display: none
 
+.container-100
+  width: 100%
 
+.tooltip
+  font-family: 'Heebo', sans-serif
+  &.in
+    opacity: 1;
+    filter: alpha(opacity=100);
+  &.bottom
+    .tooltip-arrow
+      border-bottom-color: #fff;
+  &.top
+    .tooltip-arrow
+      border-bottom-color: #fff;
+  .tooltip-inner
+    max-width: 300px;
+    padding: 17px 15px 23px 15px;
+    color: $text-bold;
+    text-align: center;
+    border: solid 1px #ebebeb;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 -2px 2px 0 rgba(255, 255, 255, 0.11);
+  .tooltip-arrow
+    border-bottom-color: #f00;
 
+// .tooltip
+//   position: absolute;
+//   z-index: 1070;
+//   display: block;
+//   font-family: 'Heebo', sans-serif
+//   font-style: normal;
+//   font-weight: normal;
+//   letter-spacing: normal;
+//   line-break: auto;
+//   line-height: 1.42857143;
+//   text-align: left;
+//   text-align: start;
+//   text-decoration: none;
+//   text-shadow: none;
+//   text-transform: none;
+//   white-space: normal;
+//   word-break: normal;
+//   word-spacing: normal;
+//   word-wrap: normal;
+//   font-size: 12px;
+//   opacity: 1;
+//   filter: alpha(opacity=1);
+
+//   &.in
+//     opacity: 1;
+//     filter: alpha(opacity=100);
+//   &.top
+//     margin-top: -3px;
+//     padding: 5px 0;
+//     .tooltip-arrow
+//       bottom: 0;
+//       left: 50%;
+//       margin-left: -5px;
+//       border-width: 5px 5px 0;
+//       border-top-color: #ebebeb;
+//   &.top-left .tooltip-arrow
+//     bottom: 0;
+//     right: 5px;
+//     margin-bottom: -5px;
+//     border-width: 5px 5px 0;
+//     border-top-color: #ebebeb;
+//   &.top-right .tooltip-arrow
+//     bottom: 0;
+//     left: 5px;
+//     margin-bottom: -5px;
+//     border-width: 5px 5px 0;
+//     border-top-color: #ebebeb;
+//   &.right
+//     margin-left: 3px;
+//     padding: 0 5px;
+//     .tooltip-arrow
+//       top: 50%;
+//       left: 0;
+//       margin-top: -5px;
+//       border-width: 5px 5px 5px 0;
+//       border-right-color: #ebebeb;
+//   &.bottom
+//     margin-top: 3px;
+//     padding: 5px 0;
+//     .tooltip-arrow
+//       top: 0;
+//       left: 50%;
+//       margin-left: -5px;
+//       border-width: 0 5px 5px;
+//       border-bottom-color: #ebebeb;
+//   &.bottom-left .tooltip-arrow
+//     top: 0;
+//     right: 5px;
+//     margin-top: -5px;
+//     border-width: 0 5px 5px;
+//     border-bottom-color: #ebebeb;
+//   &.bottom-right .tooltip-arrow
+//     top: 0;
+//     left: 5px;
+//     margin-top: -5px;
+//     border-width: 0 5px 5px;
+//     border-bottom-color: #ebebeb;
+//   &.left
+//     margin-left: -3px;
+//     padding: 0 5px;
+//     .tooltip-arrow
+//       top: 50%;
+//       right: 0;
+//       margin-top: -5px;
+//       border-width: 5px 0 5px 5px;
+//       border-left-color: #ebebeb;
+
+// .tooltip-inner
+//   max-width: 300px;
+//   padding: 17px 15px 23px 15px;
+//   color: $text-bold;
+//   text-align: center;
+//   border: solid 1px #ebebeb;
+//   background-color: #fff;
+//   border-radius: 3px;
+//   box-shadow: 0 -2px 2px 0 rgba(255, 255, 255, 0.11);
+
+// .tooltip-arrow
+//   z-index: 1071;
+//   position: absolute;
+//   width: 0;
+//   height: 0;
+//   border-color: transparent;
+//   border-style: solid;
+
+.modal
+  text-align: center;
+
+.modal:before
+  @media screen and (min-width: 768px)
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+
+.modal-dialog
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+
+.modal-header
+  border: none;
+
+.modal-content
+  border-radius: 3px;

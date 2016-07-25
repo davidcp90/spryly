@@ -1,5 +1,6 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { HomeComponent } from './home';
+import { TermsComponent } from './common/';
 import { StyleguideComponent } from './styleguide';
 import { DashboardComponent } from './dashboard';
 import { ProfileComponent } from './profile';
@@ -40,6 +41,10 @@ export const DashboardRoutes: RouterConfig = [
   path: '',
   redirectTo: '/home',
   terminal: true
+},
+{
+  path: 'terms',
+  component: TermsComponent
 },
 {
   path: 'home',

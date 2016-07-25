@@ -1,52 +1,25 @@
 {
+  "id": 2,
+  "source": {
     "id": 1,
-    "interaction": {
-        "connection":{
-            "source": {
-                "id": 1,
-                "name": "Source Name",
-                "picture": "/src/public/img/black_man.png",
-                "email": "robot@spryly.co"
-            },
-            "target": {
-                "id": 2,
-                "name": "Target Name",
-                "picture": "/src/public/img/white_woman.png",
-                "email": "human@spryly.co"
-            }
-        }
-    },
-    "sourceRole": "Source Role",
-    "sourceOrganization": "Source organization",
-    "targetRole": "Target Role",
-    "targetOrganization":  "Target organization",
-    "start": "2015-04-13",
-    "end": "",
-    "comments" : "Comments"
-},
-{
-    "id": 2,
-    "interaction": {
-        "connection":{
-            "source": {
-                "id": 1,
-                "name": "Source Name",
-                "picture": "/src/public/img/black_man.png",
-                "email": "robot@spryly.co"
-            },
-            "target": {
-                "id": 2,
-                "name": "Target Name",
-                "picture": "/src/public/img/white_woman.png",
-                "email": "human@spryly.co"
-            }
-        }
-    },
-    "sourceRole": "Source Role",
-    "sourceOrganization": "Source organization",
-    "targetRole": "Target Role",
-    "targetOrganization":  "Target organization",
-    "start": "2015-04-13",
-    "end": "",
-    "comments" : "Comments"
+    "name": "Ned Stark",
+    "email": "ned@test.com",
+    "picture": "/img/ned.jpg",
+    "role": "Father",
+    "organization": "Stark",
+    "relationship": "Teacher/Mentor"
+  },
+  "target": {
+    "id": 4,
+    "name": "Arya Stark",
+    "email": "arya@test.com",
+    "picture": "",
+    "role": "Daughter",
+    "organization": "Stark",
+    "relationship": ""
+  },
+  "startMonth": "04",
+  "startYear": "2015",
+  "endMonth": "",
+  "endYear": ""
 }

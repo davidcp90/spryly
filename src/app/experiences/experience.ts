@@ -1,17 +1,19 @@
+export class PersonExperience {
+    id: number;
+    name: string;
+    picture: string;
+    email: string;
+    role: string;
+    organization: string;
+    relationship: string;
+}
+
 export class Experience {
-  source: number;
-  sourceName: string;
-  sourcePicture: string;
-  sourceRole: string;
-  sourceOrganization: string;
-  targetEmail: string;
-  targetName: string;
-  targetPicture: string;
-  targetRole: string;
-  targetOrganization: string;
+  id: number;
+  source: PersonExperience;
+  target: PersonExperience;
   startMonth: string;
   startYear: string;
   endMonth: string;
   endYear: string;
-  comments: string;
 }
