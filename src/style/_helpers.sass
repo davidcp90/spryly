@@ -1,5 +1,5 @@
 .padding-after-nav
-  padding-top: 50px
+  padding-top: 30px
 .mb-2
   margin-bottom: 2px
 .mt-10
@@ -16,18 +16,11 @@
   @media screen and (max-width: 768px)
     padding: 0
 //Text
-.tx-12
-  font-size: 12px
-.tx-14
-  font-size: 14px
-.tx-16
-  font-size: 16px
-.tx-24
-  font-size: 24px
-.tx-28
-  font-size: 28px
-.tx-22
-  font-size: 22px
+//this generates a tx class to use fonts from 9 px to 72px. Just use .tx-number where number is a int from 9 to 72
+@for $i from 9 through 72
+  .tx-#{$i}
+    font-size: #{$i}px
+//weights
 .tx-med
   font-weight: 500
 .tx-light
@@ -40,7 +33,7 @@
   color: $text-gray
 .tx-wh
   color: white
-.text-primary
+.tx-primary
   color: $primary
 
 //Flexbox

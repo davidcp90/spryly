@@ -73,17 +73,17 @@ h6
   &.btn-lg
     font-size: 14px
   .material-icons
-    font-size: 22px
     margin-right: 5px
-    line-height: 30px
+    float: left
   span
     position: relative
-    top: -7px
+    top: 3px
 
 // Dashboard main ==============================================
 spr-dashboard
   max-width: 100%
   overflow-x: hidden
+  background: #F9F9F9
 // Navbar =====================================================================
 .navbar-transparent
   background: transparent
@@ -203,130 +203,6 @@ spr-dashboard
             background-size: 19px 19px;
             &.active
               background-image: url('../public/img/notifications-red.png') !important
-.sidenav
-  height: 100vh
-  text-align: center
-  padding-top: 50px
-  background: #EDEFF0
-  -webkit-box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.14)
-  -moz-box-shadow:    2px 0px 4px 0px rgba(0, 0, 0, 0.14)
-  box-shadow:         2px 0px 4px 0px rgba(0, 0, 0, 0.14)
-  transition: all 0.2s ease-in
-  z-index: 2
-  position: fixed
-  @media screen and (max-width: 768px)
-    position: absolute
-    width: 282px
-    left: -290px
-    &.show
-      left: 0
-  .content
-    width: 90%
-    margin: 0 auto
-    @media screen and (min-width: 768px) and (max-width: 992px)
-      width: 98%
-  .edit
-    display: block
-    background: url('../public/img/edit.png') top right no-repeat
-    background-size: 45%
-    padding: 22px 22px
-    width: 22px
-    height: 40px
-    float: right
-    position: relative
-    top: 20px
-    font-size: 12px
-    color: $primary
-    cursor: pointer
-    text-indent: -9999px
-    &:hover
-      text-indent: 0
-  .section-profile
-    @media screen and (max-width: 768px)
-      margin-top: -20px
-  .profile-picture
-    width: 155px
-    height: 155px
-    border: 4px solid #fff
-    border-radius: 50%
-    margin: 20px auto 20px auto
-    transition: all 0.3s ease-in
-    @media screen and (max-width: 768px)
-      width: 55px
-      height: 55px
-      float: left
-      margin-right: 15px
-    &:hover
-      border-color: $primary
-    img
-      border-radius: 50%
-      width: 100%
-      height: auto
-      border: 8px solid transparent
-      position: relative
-      @media screen and (max-width: 768px)
-        border: 2px solid transparent
-  .profile-names
-    @media screen and (max-width: 768px)
-      float: left
-  .name
-    font-weight: 500
-    font-size: 18px
-    color: $text-bold
-    @media screen and (max-width: 768px)
-      font-size: 16px
-  .role
-    font-weight: 400
-    font-size: 14px
-    color: $text-primary
-    @media screen and (max-width: 768px)
-      font-size: 13px
-  .stats, .section-cta
-    margin-top: 57px
-  .stats
-    width: 110px
-    margin-left: auto
-    margin-right: auto
-    @media screen and (max-width: 768px)
-      margin-top: 5px
-    .stat
-      font-size: 13px
-      color: $primary
-      font-weight: 700
-      margin-right: 10px
-      .img-icon
-        &.recommendations
-          width: 15px
-          height: auto
-        &.contacts
-          width: 24px
-          height: auto
-  .links-xs
-    display: none
-    @media screen and (max-width: 768px)
-      display: block
-      margin-top: 30px
-    .btn
-      text-align: left !important
-      padding: 10px 0 !important
-      transition: 0.2s all ease-in
-      &:hover
-        border-color: transparent !important
-        color: $primary-light
-        margin-left: 5px
-      .img-icon
-        width: 12px
-        height: auto
-  .logout
-    position: absolute
-    bottom: 30px
-    left: 20px
-    @media screen and ( max-width: 768px )
-      display: none
-    .btn-link
-      &:hover
-        border: 1px solid transparent
-
 .notification-center
   height: 100vh
   padding-top: 50px
@@ -443,7 +319,7 @@ hr
     [type="radio"]
       border: 0
       clip: rect(0 0 0 0)
-      height: 1px 
+      height: 1px
       margin: -1px
       overflow: hidden
       padding: 0
@@ -477,7 +353,7 @@ hr
       background: url('../public/img/check-rec.png') no-repeat top right
       background-size: 50px 50px
     .panel-body
-      padding: 25px 40px 25px 25px
+      padding: 18px
     .card-details
       display: block
       clear: both

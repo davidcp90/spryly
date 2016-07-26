@@ -2,6 +2,7 @@ import { provideRouter, RouterConfig } from '@angular/router';
 import { HomeComponent } from './home';
 import { StyleguideComponent } from './styleguide';
 import { DashboardComponent } from './dashboard';
+import { ProfileComponent } from './profile';
 import {
   RecDetailComponent,
   RecListComponent,
@@ -51,7 +52,7 @@ export const DashboardRoutes: RouterConfig = [
   path: 'dashboard',
   component: DashboardComponent,
   children: [
-  { path: '', redirectTo: '/dashboard/recommendations', terminal: true },
+  { path: '', redirectTo: '/dashboard/profile', terminal: true },
   { path: 'network', component: ContactListComponent },
   { path: 'network/map', component: ContactMapComponent },
   { path: 'network/add', component: ContactAddComponent },
@@ -63,6 +64,7 @@ export const DashboardRoutes: RouterConfig = [
   { path: 'conversations', component: ConversationListComponent },
   { path: 'conversations/view', component: ConversationDetailComponent },
   { path: 'conversations/new', component: ConversationRequestComponent },
+  { path: 'profile', component: ProfileComponent}
   ]
 },
 {

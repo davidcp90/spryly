@@ -4,10 +4,9 @@
       <button class="hamburguer" (click)="toggleSidenav()">Show menu</button>
       <a class="navbar-brand" href="#"><img class="logo" src="./img/logo.png" alt="Spryly"></a>
     </div>
-    <div class="col-sm-8 col-md-8 col-lg-9">
+    <div class="col-sm-8 col-md-8 col-lg-9 hidden-xs">
       <ul class="nav navbar-nav links">
-        <li><a  [routerLink]="['/dashboard/recommendations']">Connections</a></li>
-        <li><a [routerLink]="['/dashboard/network']">Your Network</a></li>
+        <li><a  [routerLink]="['/dashboard/profile']">Your profile</a></li>
       </ul>
     </div>
   </div>
