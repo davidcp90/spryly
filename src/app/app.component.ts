@@ -1,7 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-/*import { HomeComponent } from './home';*/
-/*import { DashboardComponent } from './dashboard';*/
+
 
 /*
  * App Component

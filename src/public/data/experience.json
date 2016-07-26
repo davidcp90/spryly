@@ -1,6 +1,32 @@
 {
     "id": 1,
-    "interaction": {        
+    "interaction": {
+        "connection":{
+            "source": {
+                "id": 1,
+                "name": "Source Name",
+                "picture": "/src/public/img/black_man.png",
+                "email": "robot@spryly.co"
+            },
+            "target": {
+                "id": 2,
+                "name": "Target Name",
+                "picture": "/src/public/img/white_woman.png",
+                "email": "human@spryly.co"
+            }
+        }
+    },
+    "sourceRole": "Source Role",
+    "sourceOrganization": "Source organization",
+    "targetRole": "Target Role",
+    "targetOrganization":  "Target organization",
+    "start": "2015-04-13",
+    "end": "",
+    "comments" : "Comments"
+},
+{
+    "id": 2,
+    "interaction": {
         "connection":{
             "source": {
                 "id": 1,

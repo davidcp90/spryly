@@ -1,6 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { ELEMENT_PROBE_PROVIDERS } from '@angular/platform-browser';
+import { ELEMENT_PROBE_PROVIDERS, Title } from '@angular/platform-browser';
 import { ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HTTP_PROVIDERS } from '@angular/http';
@@ -24,6 +24,7 @@ bootstrap(AppComponent, [
     APP_ROUTER_PROVIDERS,
     { provide: LocationStrategy, useClass: HashLocationStrategy }, // use #/ routes, remove this for HTML5 mode
     disableDeprecatedForms(),
+    Title,
     provideForms()
   ])
 .catch(err => console.error('error bootstraping' + err));

@@ -1,4 +1,7 @@
 // Body level
+*:focus
+  box-shadow: 0
+  outline: 0
 html, body
   height: 100%
   overflow-x: hidden
@@ -49,9 +52,16 @@ h6
   &.btn-primary
     background: $primary
     color: white
-    transition: all 0.6s ease-in
+    transition: all 0.3s ease-in
     border: 1px solid transparent
+    &.social
+      padding: 5px
+      font-size: 12px
+      font-weight: 500
+      @media screen and (max-width: 768px)
+        margin-top: 10px
     &:hover
+      transform: scale(1.03)
       background: $primary-light
   &.btn-default
     color: $primary
@@ -109,22 +119,59 @@ spr-dashboard
       li
         a
           padding: 10px 0
-  .hamburguer
-    display: none
-    @media screen and (max-width: 768px)
+
+.menu-dropdown
+    display: inline-block
+    float: left
+    margin-left: 40px
+    padding-right: 20px
+    height: 34px
+    position: relative
+    top: 6px
+    cursor: pointer
+    transition: 0.2s all ease-in
+    &:hover
+      transform: scale(1.05)
+      img
+        border-color: #B3ECEC
+    img
+      border-radius: 50%
+      width: 34px
+      height: 34px
+      border: 2px solid transparent
+      transition: 0.2s all ease-out
       display: inline-block
-      outline: none
-      background: url('../public/img/hamburguer.png') no-repeat center center
-      background-size: cover
-      text-indent: -999px
-      border: 0
-      float: right
-      width: 27px
-      height: 19px
-      position: relative
-      top: 16px
-      &:focus
-        outline: none
+      clear: both
+      &:hover
+        border-color: #B3ECEC
+    .caret
+      color: #B3ECEC
+.dropdown-menu
+  border: 0 !important
+  border-radius: 3px
+  margin-top: 10px
+  .arrow
+    width: 16px
+    height: 16px
+    display: block
+    background: #fff
+    transform: rotate(45deg)
+    position: absolute
+    top: -2px
+    right: 16px
+    &.arrow-left
+      left: 8px
+  .dropdown-item
+    color: #333
+    border: 0
+    padding: 10px 15px
+    transition: 0.2s all ease-in
+    .adjust-text
+      position: relative !important
+      top: -6px !important
+    &:hover
+      background: #f9f9f9
+      color: #555
 .navbar-spryly
   border-width: 0
   max-height: 50px !important
@@ -138,32 +185,98 @@ spr-dashboard
   .logo
     height: 26px
     padding-left: 26px
-  .hamburguer
+    @media screen and (max-width: 768px)
+      position: relative
+      top: 2px
+      padding-left: 0
+
+  #ham-group
     display: none
     @media screen and (max-width: 768px)
       display: inline-block
-      outline: none
-      background: url('../public/img/hamburguer.png') no-repeat center center
-      background-size: cover
-      text-indent: -999px
-      border: 0
       float: left
-      width: 27px
-      height: 19px
       position: relative
       top: 16px
-      &:focus
+      height: 22px
+      width: 30px
+      .hamburguer
+        display: block
+        clear: both
         outline: none
+        background: url('../public/img/hamburguer.png') no-repeat center center
+        background-size: 27px 19px
+        text-indent: -999px
+        border: 0
+        width: 30px
+        height: 22px
+        box-shadow: none !important
+        &:focus
+          outline: none
+        &:after
+          content: ''
+          position: absolute
+          top: -10px
+          bottom: -10px
+          left: -10px
+          right: -10px
 
 .navbar-nav
     &.links
-      margin-left: -9px
+      margin-left: 36px
       @media screen and (max-width: 768px)
         display: none
     &.navbar-right
-      margin-right: -30px
+      padding-right: 26px
       @media screen and (max-width: 768px)
         float: right
+        padding-right: 0
+      .search-form
+        display: inline-block
+        float: left
+        @media screen and (max-width: 768px)
+          position: relative
+          top: -6px
+      .search
+        background: transparent
+        border: 0
+        border-bottom: 1px solid #B3ECEC
+        color: white
+        padding: 3px 6px
+        margin-top: 10px
+        width: 220px
+        @media screen and (max-width: 768px)
+          width: 180px
+        @media screen and (max-width: 400px)
+          width: 150px
+        @media screen and (max-width: 350px)
+          width: 120px
+        &::-webkit-input-placeholder
+          color: #B3ECEC
+        &::-moz-placeholder
+          color: #B3ECEC
+        &:-ms-input-placeholder
+          color: #B3ECEC
+        &:focus
+          box-shadow: 0
+          outline: 0
+      .btn-search
+        background: #14A3A3
+        border: 0
+        color: #B3ECEC
+        height: 28px
+        position: relative
+        top: 8px
+        padding-left: 9px
+        padding-right: 9px
+        text-align: center
+        border-radius: 3px
+        transition: 0.2s all ease-in
+        &:hover
+          transform: scale(1.1)
+        &:focus
+          box-shadow: 0
+          outline: 0
+
     li
       a
         padding: 16px 25px 10px 25px
@@ -221,6 +334,7 @@ hr
   height: 1px
   margin: 10px 0
 //Forms
+//deprecated
 .spryly-form
   background: white
   padding: 35px
@@ -247,6 +361,7 @@ hr
     width: 50%
   @media screen and (max-width: 768px)
     width: 80%
+
 .form-group
   label
     font-size: 14px

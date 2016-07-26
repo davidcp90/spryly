@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'; // OnDestroy
+import { Component, OnInit, OnDestroy } from '@angular/core'; // OnDestroy
 import { CORE_DIRECTIVES } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Message } from '../message';
@@ -11,7 +11,7 @@ import { RecommendationService } from '../recommendation.service';
   providers: [RecommendationService]
 })
 
-export class RecShareComponent implements OnInit {
+export class RecShareComponent implements OnInit, OnDestroy {
   error: string;
   sub: any;
   message: Message = {

@@ -16,10 +16,13 @@
   padding: 25px 56px
   @media screen and (max-width: 1200px)
     width: 73%
+    padding: 25px 46px
   @media screen and (max-width: 992px)
     width: 82%
+    padding: 25px 36px
   @media screen and (max-width: 768px)
-    width: 92%
+    width: 98%
+    padding: 25px 16px
 .profile-picture
     width: 155px
     height: 155px
@@ -28,10 +31,8 @@
     margin: 20px auto 20px auto
     transition: all 0.3s ease-in
     @media screen and (max-width: 768px)
-      width: 55px
-      height: 55px
-      float: left
-      margin-right: 15px
+      width: 120px
+      height: 120px
     &:hover
       border-color: $primary
     img
@@ -44,8 +45,9 @@
         border: 2px solid transparent
 .profile-names
   text-align: center
-  width: 270px
   margin: 10px auto 20px auto
+  @media screen and (min-width: 768px)
+      width: 270px
 .verifications-list
   clear: both
   margin-top: 40px
@@ -53,14 +55,9 @@
   a
     text-decoration: none
     margin: 0 1px
-    &:hover
-      img
-        border-color: $primary
     img
       width: 32px
       height: 32px
-      position: relative
-      transition: 0.2s all ease-in
       border: 2px solid transparent
     &.badge
       border-radius: 50%
@@ -69,5 +66,48 @@
       background: $primary
       font-size: 16px
       line-height: 28px
+      transition: 0.2s all ease-in
+      &:hover
+        background: $info
+
+.tour-box
+  border-radius: 3px
+  background: #303030
+  position: absolute
+  padding: 15px
+  color: white
+  display: none
+  opacity: 0
+  z-index: 100
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24)
+  transition: 0.5s all ease-in
+  &.active
+    display: block
+  .arrow
+    width: 16px
+    height: 16px
+    display: block
+    background: #303030
+    transform: rotate(45deg)
+    position: absolute
+  .tour-btn
+    cursor: pointer
+    &:first-child
+      margin-right: 10px
+#add-btn-xs
+  position: fixed
+  right: 30px
+  bottom: 30px
+  height: 50px
+  padding: 7.25px 0
+  text-align: center
+  width: 50px
+  color: white
+  border-radius: 50%
+  background: $primary
+  transition: 0.2s all ease-in
+  &:hover
+    transform: scale(1.1)
+
 
 

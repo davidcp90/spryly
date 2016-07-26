@@ -1,0 +1,35 @@
+<div id="first-step" class="tour-box">
+  <div class="arrow"></div>
+  <p>Once verified, your experience is added to your profile.</p>
+  <div class="pull-right">
+    <span class="tx-14 tx-gray tour-btn" (click)="skipTour('first-step')">Skip tour</span>
+    <span class="tx-14 tx-primary tx-under tour-btn" (click)="secondStep(hideStep('first-step'))">Next ></span>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div id="second-step" class="tour-box">
+  <div class="arrow"></div>
+  <p>These are your verifications for this experience. Click on a contact to see their profile.</p>
+  <div class="pull-right">
+    <span class="tx-14 tx-gray tour-btn" (click)="skipTour('second-step')">Skip tour</span>
+    <span class="tx-14 tx-primary tx-under tour-btn" (click)="thirdStep(hideStep('second-step'))">Next ></span>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div id="third-step" class="tour-box">
+  <div class="arrow"></div>
+  <p>Build your profile by asking your contacts to verify your experience.</p>
+  <div class="pull-right">
+    <span class="tx-14 tx-gray tour-btn" (click)="skipTour('third-step')">Skip tour</span>
+    <span class="tx-14 tx-primary tx-under tour-btn" (click)="lastStep(hideStep('third-step'))">Next ></span>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div id="last-step" class="tour-box">
+  <div class="arrow"></div>
+  <p>Look for people to expand your network based on their experiences</p>
+  <div class="pull-right">
+    <span class="tx-14 tx-primary tx-under tour-btn" (click)="hideStep('last-step')">Finish tour</span>
+  </div>
+  <div class="clearfix"></div>
+</div>

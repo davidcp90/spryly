@@ -1,0 +1,11 @@
+<div class="profile-bg" [ngStyle]="{'background-image': 'url(' + profile?.profileImage + ')'}"></div>
+<div class="profile-container" >
+  <div class="col-xs-12">
+  <h1 class="tx-28 tx-light tx-primary">Share and verify experience</h1>
+  <p class="tx-gray tx-14">Share the links with each of your contacts to verify the experience. Do it via your social networks or if you prefer send an email to them. </p>
+
+  <div *ngFor="let s of shares">
+    <spr-experience-share-detail [shareInfo] = "s"></spr-experience-share-detail>
+  </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
-
+import { SHARES } from './experience-share/mock-shareInfo';
 // Statics
 import 'rxjs/add/observable/throw';
 
@@ -73,4 +73,8 @@ export class ExperienceService {
     };
     return experience;
   }
+  getShares() {
+    return Promise.resolve(SHARES);
+  }
+
 }

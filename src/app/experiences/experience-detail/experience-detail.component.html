@@ -1,13 +1,14 @@
-<div class="panel panel-default">
+<div class="panel panel-default" id="{{idExp}}">
   <div class="panel-body">
-    <h4 class="tx-20 tx-bold"><span class="tx-normal">Currently a</span> Senior Developer <span class="tx-normal">at</span> Sprylygrid </h4>
-    <h5 class="tx-15 tx-bold"><span class="tx-normal">from</span> January 2010 <span class="tx-normal">to</span> January 2015</h5>
-    <div class="pull-right text-center">
+    <h4 class="tx-20 tx-bold"><span class="tx-normal" *ngIf="!verification.end"> Currently</span> {{verification.role}} <span class="tx-normal">at</span> {{verification.organization}}</h4>
+    <h5 class="tx-15 tx-bold"><span class="tx-normal">from</span> {{verification.start | date: 'MMMM y' }} <span *ngIf="verification.end"><span class="tx-normal">to</span> {{verification.end | date: 'MMMM y' }}</span></h5>
+    <div class="pull-right text-center" *ngIf="verification.people">
       <h6 class="tx-16 tx-med tx-primary">VERIFIED BY:</h6>
       <div class="verified-people">
-        <a href="" tooltip="Manuel montes"><img src="http://static1.squarespace.com/static/54d12b4de4b02f3989468d9c/t/5643bd6de4b0552eb80a57cc/1447279997799/?format=500w" alt="" class="img-circle"></a>
-        <a href="" tooltip="Amaury prieto"><img src="http://static1.squarespace.com/static/54d12b4de4b02f3989468d9c/t/573f6c5345bf2172615e419d/1463774305670/?format=500w" alt="" class="img-circle"></a>
-        <a href="" class="badge" tooltip="5 more">5+</a>
+        <span *ngFor="let p of verification.people;let i=index">
+          <a *ngIf="i == 0 || i == 1" class="people" href="" tooltip="{{p.name}}"><img src="{{p.picture}}" alt="{{p.name}} picture" class="img-circle"></a>
+          <a *ngIf="i == 2" href="" class="badge" tooltip="{{verification.people.length - 2}} more">{{verification.people.length - 2}}+</a>
+        </span>
       </div>
     </div>
   </div>

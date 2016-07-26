@@ -3,11 +3,21 @@
 <head>
     <meta charset="utf-8">
     <title>Spryly</title>
-   <link rel="shortcut icon" href="./img/favicon.png">	
+   <link rel="shortcut icon" href="./img/favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Heebo:400,100,300,500,700,800,900|Material+Icons' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="initial-scale=1">
     <base href="/">
 </head>
 <body style="background: #f9f9f9">
+     <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <spr-app>
         <div style="margin: 150px auto 0 auto;opacity: 0.5;width: 155px;">
         	  <img src="img/loader.gif" width="150" alt="">

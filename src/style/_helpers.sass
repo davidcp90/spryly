@@ -1,7 +1,7 @@
 .padding-after-nav
   padding-top: 30px
-.mb-2
-  margin-bottom: 2px
+.mb-20
+  margin-bottom: 20px
 .mt-10
   margin-top: 10px
 .mt-20
@@ -35,12 +35,17 @@
   color: white
 .tx-primary
   color: $primary
-
+.tx-under
+  text-decoration: underline
+.pointer
+  cursor: pointer
 //Flexbox
 .flex-container
   display: flex
   @media screen and (max-width: 768px)
     &.fall-xs
+      flex-direction: column
+  &.vertical
       flex-direction: column
 .flex-space
   justify-content: space-between

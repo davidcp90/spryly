@@ -30,7 +30,8 @@ import {
 import {
   ExperienceComponent,
   ExperienceAddComponent,
-  ExperienceVerifyComponent
+  ExperienceVerifyComponent,
+  ExperienceShareComponent
 } from './experiences';
 
 
@@ -96,6 +97,10 @@ export const DashboardRoutes: RouterConfig = [
     {
       path: 'add',
       component: ExperienceAddComponent
+    },
+    {
+      path: 'share',
+      component: ExperienceShareComponent
     },
     {
       path: 'verify/:key',
