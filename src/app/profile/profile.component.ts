@@ -2,20 +2,21 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ExperienceDetailComponent } from '../experiences/experience-detail';
 import { Title }     from '@angular/platform-browser';
 import { ProfileService } from './profile.service';
-import {Verification } from './verification';
 import { ProfileTourComponent } from './profile-tour';
+import {ExperienceService} from '../experiences/experience.service';
 @Component({
   selector: 'spr-profile',
   directives: [ExperienceDetailComponent, ProfileTourComponent],
   template: require('./profile.component.html'),
-  providers: [ProfileService]
+  providers: [ProfileService, ExperienceService]
 })
 export class ProfileComponent implements OnInit, AfterViewInit {
-  verifications: Verification[];
+  verifications: any;
   profile: any;
   executeTour: boolean = false;
   constructor(private titleService: Title,
-    private _profileService: ProfileService ) {}
+    private _profileService: ProfileService,
+    private _experienceService: ExperienceService ) {}
 
   ngOnInit() {
     this.titleService.setTitle( 'Your profile - Spryly' );
@@ -26,10 +27,12 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     this.activeLink();
   }
   getVerifications() {
-    this._profileService.getVerifications().then(verifications => this.verifications = verifications);
+    this._profileService.getVerificationsMock().then(verifications => this.verifications = verifications);
+    // this._experienceService.getAllExperiences().subscribe(verifications => this.verifications = verifications);
   }
   getProfile() {
-    this._profileService.getProfile().then(profile => this.profile = profile[0]);
+    this._profileService.getProfileMock().then(profile => this.profile = profile[0]);
+    // this._profileService.getProfile().then(profile => this.profile = profile);
   }
   activeLink() {
     let profileLink = document.getElementById('profile-link');

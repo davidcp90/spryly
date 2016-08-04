@@ -18,10 +18,23 @@ import { Experience } from './experience';
 
 @Injectable()
 export class ExperienceService {
-  private headers = new Headers({ 'Content-Type': 'application/json' });
-  /*private experiencesURL = sprGlobals.endpoint + "/interactions/";*/
+  private headers = new Headers({
+   'Content-Type': 'application/json',
+   'X-Auth-Token': localStorage.getItem('token')
+ });
+  private experiencesURL = sprGlobals.endpoint + '/typenetworks/';
   constructor(private http: Http) { }
 
+  getAllExperiences(): Observable<Experience> {
+    let url = this.experiencesURL + localStorage.getItem('id');
+    return this.http
+      .get(url, { headers: this.headers })
+      .map(response => {
+        let data = response.json();
+        return this.prepareExperience(data);
+      })
+      .catch(this.handleError);
+  }
   findByKey(key: string): Observable<Experience> {
     // let url = this.experiencesURL + '/networks/' + key;
     let url = '/data/experience.json';
