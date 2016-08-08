@@ -14,6 +14,8 @@
   display: none
 .no-pad
   padding: 0
+.no-mar
+  margin: 0
 .no-pad-xs
   @media screen and (max-width: 768px)
     padding: 0
@@ -41,6 +43,17 @@
   text-decoration: underline
 .pointer
   cursor: pointer
+.link-primary
+  color: $primary
+  text-decoration: underline
+  &:hover
+    color: $primary-light
+.link-white
+  color: white
+  text-decoration: underline
+  &:hover
+    color: white
+    opacity: 0.8
 //Flexbox
 .flex-container
   display: flex

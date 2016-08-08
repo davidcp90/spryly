@@ -457,7 +457,42 @@ hr
       &:checked + span:before
         background: $primary
         box-shadow: 0 0 0 2px #00C0C0
-
+  .checkbox
+    label
+      display: block
+      cursor: pointer
+      padding-left: 0
+    [type="checkbox"]
+      border: 0
+      clip: rect(0 0 0 0)
+      height: 1px
+      margin: -1px
+      overflow: hidden
+      padding: 0
+      position: absolute
+      width: 1px
+      + span
+        display: block
+        font-weight: 400
+        position: relative
+        top: 2px
+        .align-text
+          position: relative
+          top: 1px
+        &:before
+          content: ''
+          display: inline-block
+          width: 15px
+          height: 15px
+          vertical-align: -0.25em
+          border: 2px solid #fff
+          border-radius: 3px
+          box-shadow: 0 0 0 1px #DEDEDE
+          margin-right: 0.75em
+          transition: 0.5s ease all
+      &:checked + span:before
+        background: $primary
+        box-shadow: 0 0 0 2px #00C0C0
 //Panel
 .panel
   &-default

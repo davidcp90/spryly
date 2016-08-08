@@ -1,35 +1,30 @@
-<div class="row head-landing" *ngIf="!landing">
-  <div class="col-xs-8">
-    <h3 class="tx-24 tx-primary">Sign in</h3>
-    <p><span>New to Spryly?</span> <a href="#/users/signup">Create an account</a></p>
-  </div>
-  <div class="col-xs-4">
-    <img class="logo-landing" src="img/logo-turq.png" alt="">
-  </div>
+<img src="img/logo-white.png" alt="spryly" class="center-block logo-landing" />
+<h2 class="text-center tx-wh tx-light tx-24">Sign in into your account</h2>
+<div class="landing-form" id="landing-form">
+    <div class="account-info">
+      <img src="http://static1.squarespace.com/static/54d12b4de4b02f3989468d9c/t/56ccd54d746fb9d06f7274c8/1463778793252/?format=500w" alt="Srikanth Reddy Boyapalli">
+      <h3 class="tx-14 tx-med">Srikanth Reddy Boyapalli</h3>
+      <h4 class="tx-13 tx-normal">srikath@torre.co</h4>
+    </div>
+    <form class="spryly-form" (ngSubmit)="signIn()">
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Email" [(ngModel)]="login.email" />
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" placeholder="Password" [(ngModel)]="login.password" />
+        </div>
+        <div class="form-group pull-left">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    <span><span class="align-text">Remember me</span></span>
+                </label>
+            </div>
+        </div>
+        <button class="btn btn-primary pull-right">Sign in</button>
+        <div class="clearfix"></div>
+        <a href="" class="pull-right mt-20 link-primary">Forgot my password</a>
+        <div class="clearfix"></div>
+    </form>
 </div>
-<hr/>
-
-<form class="spryly-form" (ngSubmit)="signIn()">
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input class="form-control" type="text" placeholder="Email" [(ngModel)]="login.email" />
-  </div>
-  <div class="form-group">
-    <label for="password">Password:</label>
-    <input class="form-control" type="password" placeholder="Password" [(ngModel)]="login.password" />
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-
-  <div class="pull-right mt-20" *ngIf="!landing">
-    <button class="btn btn-primary">Sign In</button>
-  </div>
-  <div class="pull-right mt-20" *ngIf="landing">
-    <a href="#/thanks/user" class="btn btn-primary">Sign In</a>
-  </div>
-
-  <div class="clearfix"></div>
-</form>
+<a href="" class="center-block text-center link-white mt-20">Create a new account</a>
