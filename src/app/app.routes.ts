@@ -34,6 +34,10 @@ import {
   ExperienceVerifyComponent,
   ExperienceShareComponent
 } from './experiences';
+import {
+  ExplorreComponent,
+  ExplorreProfileComponent,
+} from './explorre';
 
 
 export const DashboardRoutes: RouterConfig = [
@@ -112,7 +116,17 @@ export const DashboardRoutes: RouterConfig = [
       component: ExperienceVerifyComponent
     }
   ]
-}
+},
+{
+  path: 'explorre',
+  component: ExplorreComponent,
+  children: [
+    {
+      path: 'profile',
+      component: ExplorreProfileComponent
+    }
+  ]
+},
 ];
 export const APP_ROUTER_PROVIDERS = [
 provideRouter(DashboardRoutes)
