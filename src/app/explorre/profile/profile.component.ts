@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
+import { CAROUSEL_DIRECTIVES } from 'ng2-bootstrap/components/carousel';
 
 import { Profile } from './profile';
 import { ProfileService } from './profile.service';
@@ -8,7 +9,7 @@ import { ProfileService } from './profile.service';
   selector: 'explorre-profile',
   template: require('./profile.component.html'),
   styles: [require('./profile.component.sass')],
-  directives: [CORE_DIRECTIVES],
+  directives: [CORE_DIRECTIVES, CAROUSEL_DIRECTIVES],
   providers: [ProfileService]
 })
 export class ExplorreProfileComponent implements OnInit {

@@ -101,7 +101,14 @@ module.exports = function makeWebpackConfig() {
       },
 
       // copy those assets to output
-      {test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/, loader: 'file?name=fonts/[name].[hash].[ext]?'},
+      // {test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/, loader: 'file?name=fonts/[name].[hash].[ext]?'},
+
+      {test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'file'},
+      {test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff"},
+      {test: /\.ttf(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=application/octet-stream'},
+      {test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=image/svg+xml'},
+      {test: /\.(jpe?g|png|gif)$/i, loaders: ['file']},
+      {test: /\.ico$/, loader: 'file-loader?name=[name].[ext]'},
 
       // Support for *.json files.
       {test: /\.json$/, loader: 'json'},
