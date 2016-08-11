@@ -2,12 +2,16 @@
   carousel
     .carousel-indicators
       display: none
-
     glyphicon
-      @extend .fa
+      display: inline-block
+      font: normal normal normal 14px/1 FontAwesome
+      font-size: inherit
+      text-rendering: auto
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
 
-      &.glyphicon-chevron-left
-        @extend .fa-chevron-left
+      &.glyphicon-chevron-left:before
+        content: "\f053"
 
       &.glyphicon-chevron-right
-        @extend .fa-chevron-right
+        content: "\f054"
